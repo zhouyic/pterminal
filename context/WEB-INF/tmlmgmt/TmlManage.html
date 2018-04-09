@@ -1,0 +1,130 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+   <script type="text/javascript" language="javascript" src="js/calendar.js"></script>
+   <script language="javascript">
+	   function open_win(ob,url,name,width,height,scroll){
+			var turl=url+ob.id;
+			//居中显示
+			var Left_size = (screen.width) ? (screen.width-width)/2 : 0;
+			var Top_size = (screen.height) ? (screen.height-height)/2 : 0;
+			var open_win=window.open(turl,name,'width=' + width + ',height=' + height + ',left=' + Left_size + ',top=' + Top_size + ',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=' + scroll + ',resizable=no' );
+	    }
+    </script>
+    
+	<table cellpadding="0" cellspacing="0" width=100% align=center>
+		<tr>
+	    	<td><b class=14font>终端管理</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+	</table>
+	<br>
+        
+	<form jwcid="form0@Form" direct="false">	
+		<fieldset class=setclass align=center width="98%">
+		    <legend class=legtab>查询条件</legend>
+			<table border="0" cellpadding="0" cellspacing="3"  width=98% align=center>
+			    <tr>
+			    	<td align="right">终端类别：</td>
+				 	<td align="left" width=132>
+		    	    	<select jwcid="tmlType@PropertySelection" style=width:100% model="ognl:typeModel" value="ognl:tmlType" submitOnChange="false"/>
+			        </td>
+			    	<td align="right">终端MAC：</td>
+		    	    <td align="left">
+			        	<input jwcid="tmlId@TextField" value="ognl:tmlId" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">终端状态：</td>
+				 	<td align="left" width=132>
+		    	    	<select jwcid="tmlStatus@PropertySelection" style=width:100% model="ognl:statusModel" value="ognl:tmlStatus" submitOnChange="false"/>
+			        </td>
+		    	    <td align="right">注册日期：</td>
+		    	    <td align="left">
+			        	<input jwcid="inTime@TextField" value="ognl:inTime" size="20"  onFocus="CalendarWebControl.show(this,true,this.value);"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">下载源：</td>
+				 	<td align="left" width=132>
+		    	    	<select jwcid="downSource@PropertySelection" style=width:100% model="ognl:dsourceModel" value="ognl:downSource" submitOnChange="false"/>
+			        </td>
+		    	    <td align="right">正在下载：</td>
+		    	    <td align="left">
+			        	<input jwcid="downCnt@TextField" value="ognl:downCnt" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			        <td align="right">下载速率：</td>
+				 	<td align="left" width=132>
+		    	    	<select jwcid="downRate@PropertySelection" style=width:100% model="ognl:drateModel" value="ognl:downRate" submitOnChange="false"/>
+			        </td>
+		    	    <td align="right">正在播放：</td>
+		    	    <td align="left">
+			        	<input jwcid="playCnt@TextField" value="ognl:playCnt" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+	    			<td align="right">所属组：</td>
+		 			<td align="left" width=132>
+    	    			<select jwcid="domType@PropertySelection" style=width:100% model="ognl:domTypeModel" value="ognl:domType" submitOnChange="false"/>
+	        		</td>
+	    		</tr>
+				<tr>       
+			    	<td align="center" colspan="4">&nbsp;&nbsp;
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.searchAction" 
+			    		label="查  询" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>  
+		  		</tr>
+			</table>
+		</fieldset>
+	</form>
+
+	<form jwcid="form1@Form" direct="false"> 
+		<fieldset class=setclass align=center width="98%">
+	    	<legend class=legtab>查询结果</legend>
+				<table border="0" cellpadding="3" cellspacing="1" jwcid="tableView@contrib:TableView" class="tab" width="98%"
+				    source="ognl:data"
+			    	columns="tmlId:终端ID:tmlId,strTmlType:终端类型:strTmlType,telNo:绑定手机号:telNo,
+			    	strTmlStatus:终端状态:strTmlStatus,downling:正在下载:downling,playling:正在播放:playling,
+			    	onTime:上线时间:onTime,inTime:注册日期:inTime,groupName:所属组:groupName,!operation:操作:operatioin"
+				    pageSize="10" initialSortColumn="tmlId" 
+					initialSortOrder="ognl:false"
+				    tableSessionStateManager="ognl:tableSessionStateManager">
+					<tr class="tbtitle">
+						<td jwcid="@contrib:TableColumns" align="center"/>
+					</tr>
+					<tr jwcid="@contrib:TableRows" row="ognl:terminal" class="tab_tr">			
+	        	  		<td jwcid="@contrib:TableValues" align="center"/>
+	        	  		<td jwcid="downlingColumnValue@Block">
+            	        	<span jwcid="@Foreach" source="ognl:terminal.downling" value="ognl:eachDown" >
+            	        		<span jwcid="@Any"><span jwcid="@Insert" value="ognl:eachDown.tmlDoing" />，<span jwcid="@Insert" value="ognl:eachDown.downRate" />，
+            	        		<span jwcid="@Insert" value="ognl:eachDown.downSource" /></span><BR>
+            	        	</span>
+						</td>
+						<td jwcid="playlingColumnValue@Block">
+            	        	<span jwcid="@Foreach" source="ognl:terminal.playling" value="ognl:eachDown" >
+            	        		<span jwcid="@Any"><span jwcid="@Insert" value="ognl:eachDown.tmlDoing" /></span><BR>
+            	        	</span>
+						</td>
+	            		<td jwcid="operationColumnValue@Block">
+	            		<span jwcid="@Conditional" condition="ognl:terminal.showGetSys">
+                             <!-- a jwcid="@ExternalLink" page="TmlSysInfo" parameters="ognl:terminal.tmlId" target="_blank">
+       <SPAN jwcid="@Insert" value="ognl:'查询终端系统信息'" /></a>&nbsp;&nbsp; -->
+       <a jwcid="@Any" href="#"  id="ognl:terminal.tmlId"
+onclick="ognl:'javascript:open_win(this,\'/terminal/app?service=external/TmlSysInfo&sp=S\',\'vote_view\',\'1000\',\'550\',\'yes\');'">
+       <SPAN jwcid="@Insert" value="ognl:'STB系统信息'" /></a>&nbsp;&nbsp;
+                         </span>
+                         	<a jwcid="@DirectLink" listener="ognl:listeners.editAction" parameters="ognl:terminal">
+                                  <img src=images/modify.gif border=0 alt="修改"/>
+                            </a>&nbsp;&nbsp;&nbsp;
+	            	  		<a jwcid="@DirectLink" listener="ognl:listeners.deleteAction" parameters="ognl:terminal.tmlId" onclick="JavaScript:return confirm('确定删除吗?')">
+                                  <img src=images/del.gif border=0 alt="删除"/>
+                            </a>
+		            	</td>		                             	        
+	        		</tr>
+	     			<tr class="tab_tr"><td align="right" colspan="20">共<span jwcid="@Insert" value="ognl:data.size"/>条&nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+				</table> 
+		</fieldset>
+	</form>     
+</span>
+</span>

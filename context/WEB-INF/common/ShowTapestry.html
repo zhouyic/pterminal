@@ -1,0 +1,271 @@
+<span jwcid="@Menu">
+
+		<form jwcid="@Form" listener="ognl:listeners.formSubmit">
+			<h3>
+				botton:
+				<input type="button" value="luoya" size="80" />
+				<p>
+					<input type="checkbox" jwcid="@Checkbox" 
+
+selected="ognl:contactRep" disabled="ognl:staff" />
+					checkbox
+		</form>
+
+		<p>
+		<form jwcid="@Form">
+			<table cellpadding="4" bgcolor="gray">
+				<tr>
+					<td>
+						Username:
+					</td>
+					<td>
+						<input jwcid="@TextField" 
+
+value="ognl:username" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Password:
+					</td>
+					<td>
+						<input jwcid="@TextField" 
+
+value="ognl:password" hidden="ognl:true" size="12" />
+					</td>
+				</tr>
+				<tr align="right">
+					<td colspan="2">
+						<input type="submit" jwcid="@Submit" 
+
+listener="ognl:listeners.loginSubmitAction" value="Login" />
+
+					</td>
+				</tr>
+			</table>
+		</form>
+
+
+		<!-- 要使用DatePicker标签，<body>不行，必须使用<body jwcid="@Body">   -->
+		<form jwcid="@Form" direct="false">
+			<fieldset align=center sytle="width:100%">
+				<legend class=legtab>
+					查询条件
+				</legend>
+				<table valign="middle" bgcolor="gray">
+					<tr>
+						<td>
+							Start Date:
+						</td>
+						<td>
+							<span jwcid="@DatePicker" 
+
+format="ognl:'yyyy-MM-dd'" value="ognl:startDate" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							End Date:
+						</td>
+						<td>
+							<span jwcid="@DatePicker" 
+
+format="ognl:'yyyy-MM-dd'" value="ognl:endDate" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr align="right">
+						<td colspan="2">
+							<input type="submit" jwcid="@Submit" 
+
+listener="ognl:listeners.formSubmit" value=" 查询" />
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+		<p>
+
+			<span jwcid="@Insert" value="ognl:fullName" /> <span 
+
+jwcid="@Conditional" condition="ognl:manager"> is a Manager <span jwcid="@Conditional" 
+
+condition="ognl:staffList.size > 0 "> with staff. </span> <span jwcid="@Conditional"
+					condition="ognl:staffList.size==0"> with no 
+
+staff.</span> </span> <span jwcid="@Conditional" condition="ognl:!manager "> is not a 
+
+Manager.</span>
+
+				<p>
+					Foreach:
+				<table cellspacing="6">
+					<tr>
+						<td>
+							ID
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Name
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Level
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5">
+							<hr>
+						</td>
+					</tr>
+					<tr jwcid="@Foreach" source="ognl:customerList" 
+
+value="ognl:customer" element="tr">
+						<td>
+							<span jwcid="@Insert" 
+
+value="ognl:customer.id" />
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<span jwcid="@Insert" 
+
+value="ognl:customer.fullName" />
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<span jwcid="@Insert" 
+
+value="ognl:customer.memberLevel" />
+						</td>
+					</tr>
+				</table>
+				<p>
+					insert:The order was due on the <span 
+
+jwcid="@Insert" value="ognl:dueDate" class="ognl:dueClass" />.
+
+						<p>
+						<form jwcid="@Form" 
+
+listener="ognl:listeners.propertySelectformSubmit">
+							Gender: <span 
+
+jwcid="@PropertySelection" model="ognl:@dsp.boss.nms.web.EnquiryPage@GENDER_MODEL" 
+
+value="ognl:gender" submitOnChange="true" />
+						</form>
+
+						<p>
+						<form jwcid="@Form" 
+
+listener='ognl:listeners.formSubmit'>
+							<table cellpadding="4" 
+
+cellspacing="4">
+								<tr>
+									<td>
+										<fieldset>
+											
+
+<legend>
+												
+
+Order Size
+											
+
+</legend>
+											
+
+<span jwcid="@RadioGroup" selected='ognl:orderSize'> 
+											  
+
+<input type="radio" jwcid="@Radio" value='ognl:@dsp.boss.nms.web.EnquiryPage@SMALL' /> Small 
+
+<br />
+											  
+
+<input type="radio" jwcid="@Radio" value='ognl:@dsp.boss.nms.web.EnquiryPage@MEDIUM' /> 
+
+Medium <br /> 
+											  
+
+<input type="radio"jwcid="@Radio" value='ognl:@dsp.boss.nms.web.EnquiryPage@LARGE' /> Large 
+
+<br />
+											
+
+</span>
+										</fieldset>
+									</td>
+								</tr>
+								<tr align="right">
+									<td>
+										<input 
+
+type="submit" value="Order">
+									</td>
+								</tr>
+							</table>
+						</form>
+		
+		<p>
+		
+		
+<!-- form jwcid="@Form" delegate="ognl:beans.delegate">
+<span jwcid="ShowError"/>
+<form jwcid="form" >
+<table cellpadding="2" bgcolor="gray">
+<tr>
+ <td colspan="2"><span class="title">register page:</span></td>
+</tr>
+<tr>
+ <td colspan="2"><hr></td>
+</tr>
+<tr>
+ <td colspan="2"><hr></td>
+</tr>
+<tr>
+ <td><span jwcid="@FieldLabel" field="ognl:components.fullNameField">Full 
+
+Name</span></td><td><input jwcid="fullNameField" type="text" size="25" maxlength="30"/></td>
+</tr>
+<tr>
+ <td colspan="2" align="right">
+  <input jwcid="@Submit" listener="ognl:listeners.okSubmit"  type="Submit" value="   OK   
+
+"/>
+  <input jwcid="@Submit" listener="ognl:listeners.cancelSubmit" type="Submit" value="cancel" 
+
+onclick="form.onsubmit = null;"/>
+ </td>
+</tr>
+</table>
+</form-->
+
+<style> td { text-align: center } </style>
+<table jwcid="table@contrib:Table" width="90%"
+    source="ognl:@java.util.Locale@getAvailableLocales()"
+    columns="Locale:toString(), Language, Country, Variant, ISO3Language, ISO3Country, !
+
+select"/>
+	<span jwcid="selectColumnHeader@Block">&nbsp;
+	</span>
+	<span jwcid="selectColumnValue@Block">
+    <a jwcid="@DirectLink" listener="ognl:listeners.selectLocale" 
+
+parameters="ognl:components.table.tableRow">select</a>
+	</span>
+</span>

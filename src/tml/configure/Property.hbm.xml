@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="tml.configure.Property" table="SYS_CONFIGURE">
+		<id name="id" type="integer" column="ID">
+			<generator class="assigned"/>
+		</id>
+		<property name="name" type="string" column="NAME" />
+		<property name="value" type="string" column="VALUE" />
+		<property name="desc" type="string" column="DDESC" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,144 @@
+<html>
+	<head>
+		<TITLE>Top</TITLE>
+		<meta http-equiv="Content-Type" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"/>
+		<link type="text/css" rel="StyleSheet" href="css/db_cb.css">
+		<script type="text/javascript" src="js/db_cb.js"></script>
+		<script>
+			/*显示快捷菜单效果JS开始*/
+			function load_Submenu(menuname){
+			var tabs2 = document.all.tags("THEAD")
+			
+			for (var i = 0; i <tabs2.length; i++){
+				if(tabs2[i].id==menuname){
+					tabs2[i].style.display="block"
+					}
+				else{
+				tabs2[i].style.display="none"
+				}
+				}
+			}
+			
+			/*显示快捷菜单效果JS结束*/
+			function gourl(pageurl){
+			parent.mainviewFrame.location.href=pageurl
+			}
+			
+			function tick() {
+			var hours, minutes, seconds, ap;
+			var intHours, intMinutes, intSeconds;
+			var today;
+			today = new Date();
+			intHours = today.getHours();
+			intMinutes = today.getMinutes();
+			intSeconds = today.getSeconds();
+			if (intHours < 12) {
+			hours = intHours+":";
+			ap = "AM";
+			} else {
+			hours = intHours + ":";
+			ap = "PM ";
+			}
+			if (intMinutes < 10) {
+			minutes = "0"+intMinutes+":";
+			} else {
+			minutes = intMinutes+":";
+			}
+			if (intSeconds < 10) {
+			seconds = "0"+intSeconds+" ";
+			} else {
+			seconds = intSeconds+" ";
+			}
+			timeString = hours+minutes+seconds+ap;
+			clock.innerHTML=timeString;
+			window.setTimeout("tick();", 1000);
+			}
+			
+			function changeFrame(){
+				if(parent.mainFrame.cols != "0,*"){
+					parent.mainFrame.cols = "0,*";
+					document.all.frame_ctrl.src= "images/open.gif";
+				}
+				else{
+					parent.mainFrame.cols = "180,*";
+					document.all.frame_ctrl.src= "images/close.gif";
+				}
+			}
+		</script>
+	</head>
+	<body scroll=no oncontextmenu="self.event.returnValue=false;"
+		onselectstart="self.event.returnValue=false"
+		ondragstart="self.event.returnValue=false" onload="tick();">
+	<fieldset style="padding:0">
+	<table cellpadding=0 cellspacing=0 border=0 width=100% id=topmenu
+		onselectstart="return false" ondragstart="return false" class=menuclass>
+		<tr>
+			<td width=280 align=left><!-- img src=images/LOGO1.png	valign=top alt="CRC" 
+	
+	width="280" height="30" border="0" --></td>
+			<td width=8 align=center><img src=images/dot.gif></td>
+			<td tabIndex="1" width=20 align=center onclick="changeFrame();"><nobr><img
+				id=frame_ctrl src=images/close.gif align=absmiddle alt="切换菜单"
+				style="cursor:hand"></nobr></td>
+			<td width=* valign=top><!--window style-->
+			<table cellspacing="1" cellpadding=0 border=0 width=100% id=rootMenu
+				height=24>
+				<!--window style end -->
+				<tr height=24>
+					<!--td class="coolButton" tabIndex="1" width=60 align=center 
+	
+	onclick="gourl('/dsp-boss/app?service=initPage/PasswordChange');"><nobr><img 
+	
+	src=images/userinfo.gif align=absmiddle><span id=listid>修改密码</span></nobr></td-->
+					<!--td class="coolButton" tabIndex="1" width=60 align=center 
+	
+	onclick="gourl('main.html');"><nobr><img src=images/totop.gif align=absmiddle>系统设置
+	
+	</nobr></td!-->
+					<td class="coolButton" tabIndex="1" width=60 
+	
+	align=center><nobr><a
+						href="#" jwcid="@DirectLink" 
+	
+	listener="ognl:listeners.logout"
+						target="_parent"><img src=images/logout.gif 
+	
+	align=absmiddle 
+						border=0></a><nobr></td>
+					<td tabIndex="1" width=60 align=center></td>
+					<td Disabled width=*></td>
+				</tr>
+			</table>
+			
+			<td align=right class="coolButton" background=images/top_bg.gif
+				width=100 height=24><nobr><img	src=images/user.png border=0 
+	
+	valign="top" align=absmiddle> <font
+				color="#6090ce">用户:<span jwcid="@Insert"
+				value="ognl:page.visit.operator" />&nbsp; &nbsp; <span 
+	
+	id=clock></span></font></td>
+	
+		</tr>
+	</table>
+	</fieldset>
+		<script>
+		
+		/*主菜单效果JS开始*/
+		var cells2 = rootMenu.rows[0].cells;
+		function doRadio() {
+			for (var i = 0; i < cells2.length; i++)
+				cells2[i].setValue(this == cells2[i]);
+		}
+		for (var i = 0; i < cells2.length; i++) {
+			createButton(cells2[i]);
+			//cells2[i].setAlwaysUp(true);
+			cells2[i].setToggle(true);
+			if (i == 7)//显示那个主按钮按下
+				cells2[i].setValue(true);
+			cells2[i].onaction = doRadio;
+		}
+		/*主菜单效果JS结束*/
+		</script>
+	</body>
+</html>

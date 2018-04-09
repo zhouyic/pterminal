@@ -1,0 +1,106 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+   <script type="text/javascript" language="javascript" src="js/calendar.js"></script>
+    <script language="JavaScript">
+		function checkField(){
+			var ttt = document.getElementById("ttt");
+			var serType = document.getElementById("serType");
+			if(serType.value == -1){
+				window.alert("请选择服务器类别！");
+			}else if(check_null(ttt.value)){	
+				  window.alert("服务器IP/URL不能为空！");
+			}else{
+				  return true;
+			}
+			return false;
+		}
+	</script>
+
+	<table cellpadding="0" cellspacing="0" width=100% align=center>
+		<tr>
+	    	<td><b class=14font>新增服务器</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+	</table>
+	<br>
+        
+	<fieldset class=setclass align=center width="98%">
+	    <legend class=legtab>服务器信息</legend>
+	    <table border="0" cellpadding="0" cellspacing="3"  width=98% align=center>
+	    <!-- form jwcid="form0@Form" listener="ognl:listeners.typeSubmit">
+				<br></br>
+			    <tr>
+			    	<td align="right">服务器类别：</td>
+				 	<td align="left" width=132>
+		    	    	<select id="serType" jwcid="type@PropertySelection" style=width:100% model="ognl:typeModel" value="ognl:type" submitOnChange="true"/>
+			        </td>
+			    </tr>
+		 </form -->
+		 
+		 <!-- span jwcid="@Conditional" condition="ognl:isSPE">
+			 <form jwcid="form1@Form" listener="ognl:listeners.formSubmit">
+	    		<tr>
+			    	<td align="right">所属分组：</td>
+				 	<td align="left" width=132>
+		    	    	<select id="groupId" jwcid="groupId@PropertySelection" style=width:100% model="ognl:group" value="ognl:groupId" submitOnChange="true"/>
+			        </td>
+			    </tr>
+			</form>
+		</span -->
+		 
+		 <form jwcid="form2@Form">
+		 		<!-- span jwcid="@Conditional" condition="ognl:isSPE">
+		 			<tr>
+				    	<td align="right">所属区域：</td>
+					 	<td align="left" width=132>
+			    	    	<select jwcid="unitId@PropertySelection" style=width:100% model="ognl:unit" value="ognl:unitId" submitOnChange="false"/>
+				        </td>
+			    	</tr>
+		 		</span -->
+		 		<tr>
+			    	<td align="right">公网/内网：</td>
+				 	<td align="left">
+		    	    	<select jwcid="netType@PropertySelection" style=width:30% model="ognl:netTypeModel" value="ognl:netType" submitOnChange="false"/>
+			        </td>
+			    </tr>
+		 		<tr>
+			    	<td align="right">服务器类别：</td>
+				 	<td align="left">
+		    	    	<select id="serType" jwcid="type@PropertySelection" style=width:30% model="ognl:typeModel" value="ognl:type" submitOnChange="false"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">服务器IP/URL：</td>
+		    	    <td align="left">
+			        	<input id="ttt" jwcid="ip@TextField" value="ognl:ip" size="63"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">服务器PORT：</td>
+		    	    <td align="left">
+			        	<input jwcid="port@TextField" value="ognl:port" size="63"/>
+			        </td>
+			    </tr>
+			   <tr> 
+					<td align="right">描述：</td>
+					<td align="left" colspan="3">
+						<input jwcid="desc@TextArea" value="ognl:desc" rows=3 cols=50/>
+					</td>                             
+		   		</tr>
+			    <tr></tr><tr></tr><tr></tr>
+				<tr>       
+			    	<td align="center" colspan="4">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" onclick="JavaScript:return checkField()" listener="ognl:listeners.okAction" 
+			    		label="确  定" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>
+				    <td align="center" colspan="4">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.backAction" 
+			    		label="返  回" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>
+		  		</tr>
+		</form>
+		</table>
+	</fieldset>
+	
+</span>
+</span>

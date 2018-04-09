@@ -1,0 +1,38 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+<table border="0" cellpadding="0" cellspacing="3" width="100%" align="center">
+<tr>
+    <td><b class=14font>批量注册终端</b></td>
+	<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+</tr>
+</table>
+<br>
+<br>	
+		
+	<form jwcid="form0@Form" direct="false" delegate="ognl:beans.validationDelegate" >
+		<fieldset class=setclass align=center><legend class=legtab>获取资源文件</legend> 
+			<br>
+			<table border="0" cellpadding="0" cellspacing="3" width="98%" align="center">
+				<tr>
+					<td width=90 class=lefttitle align="right">文件路径：</td>
+					<td class=righttd colspan=4>
+						<input jwcid="@Upload" file="ognl:resFile" type= "file"  size="15" maxlength="15"  class=txtinput />								
+					</td>
+				</tr>			
+	       </table>	       <br>
+		</fieldset>
+		<br>
+			<table border="0" cellpadding="0" cellspacing="3" width="98%" align="center">
+					<tr>
+					<td align=center>
+					<br>
+					<img src="images/but_l.gif" border="0" align="absmiddle"><input jwcid="@Submit" listener="ognl:listeners.submit" label="添  加" class=but/><img src="images/but_r.gif" border="0" align="absmiddle">&nbsp; 	
+					<img src="images/but_l.gif" border="0" align="absmiddle"><input jwcid="@Submit" listener="ognl:listeners.reset" label="重  置" class=but/><img src="images/but_r.gif" border="0" align="absmiddle">						
+					</td>  	      
+					</tr>
+			</table> 
+	</form>	  
+		
+			
+  </span>
+</span>

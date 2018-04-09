@@ -1,0 +1,52 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+   <script type="text/javascript" language="javascript" src="js/calendar.js"></script>
+   
+   <script language="JavaScript">
+		function checkField(){
+			var startTime = document.getElementById("startTime");
+			var endTime = document.getElementById("endTime");
+		
+			if(check_null(startTime.value)){	
+				  window.alert("请输入开始时间！");
+			}else if(check_null(endTime.value)){	
+				  window.alert("请输入结束时间！");
+			}else{
+				  return true;
+			}
+			return false;
+		}
+	</script>
+    
+	<table cellpadding="0" cellspacing="0" width=100% align=center>
+		<tr>
+	    	<td><b class=14font>订单查询</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+	</table>
+	<br>
+        
+	<form jwcid="form0@Form" direct="false">	
+		<fieldset class=setclass align=center width="98%">
+		    <legend class=legtab>查询条件</legend>
+			<table border="0" cellpadding="0" cellspacing="3"  width=98% align=center>
+			    <tr>
+			    	<td align="left" width="300px">开始时间：<input id="startTime" jwcid="startTime@TextField" value="ognl:startTime" size="20"  onFocus="CalendarWebControl.show(this,true,this.value);"/>
+			        </td>
+		    	    <td align="left" width="300px">结束时间：<input id="endTime" jwcid="endTime@TextField" value="ognl:endTime" size="20"  onFocus="CalendarWebControl.show(this,true,this.value);"/>
+			        </td>       
+			    	<td align="left">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" onclick="JavaScript:return checkField()" listener="ognl:listeners.formAction" 
+			    		label="生成报表" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+			    		<span jwcid="@Conditional" condition="ognl:isDownload">
+						<script language="javascript">
+							window.open ("<span jwcid="@Insert" value="ognl:strFileURL" />", "_parent")
+						</script>
+ 						</span>
+				    </td>
+		  		</tr>
+			</table>
+		</fieldset>
+	</form>
+</span>
+</span>

@@ -1,0 +1,68 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+
+<script language="JavaScript">
+
+function checkField(){
+	with(document.forms[0]){
+		if(check_null(newPwd1.value)){
+			window.alert("新密码不能为空！");
+		}else	if(!check_same(newPwd1.value,newPwd2.value)){
+			window.alert("两次密码输入不一样！");
+		}else{	
+			return true;
+		}
+		return false;
+	}
+}
+
+</script>
+
+	<table cellspacing=0 cellpadding=0 width=100% align=center>
+		<tr>
+		   	<td><b class=14font>重新设置密码</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+	</table>
+	
+<form jwcid="form1@Form" >
+	<fieldset align="center" width="100%">
+		<legend class="legtab" width="100%">重新设置密码</legend>
+		<br>
+		<table border="0" cellpadding="0" cellspacing="3" width="85%" align="center">
+			<tr> 
+		    	<td align="right">用户名:</td>
+			    <td align="left">
+			       <input jwcid="@Insert" value="ognl:user"/>
+			     </td>
+		  	</tr>
+			<tr> 
+		    	<td align="right">新密码:</td>
+			    <td align="left">
+			    	<input jwcid="newPwd1@TextField" value="ognl:newPwd" hidden="ognl:true" maxlength="20" size="20"/>
+			     </td>
+		  	</tr>
+			<tr> 
+		    	<td align="right">新密码确认:</td>
+			    <td align="left">
+			    	<input jwcid="newPwd2@TextField" value="ognl:newPwd" hidden="ognl:true" maxlength="20" size="20"/>
+			     </td>
+		  	</tr>
+			<tr> 
+			    <td>&nbsp;</td>
+		  	</tr>
+			<tr> 
+				<td>&nbsp;</td>
+			    <td align="left">
+					<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" onclick="JavaScript:return checkField()" listener="ognl:listeners.submit" label="确定" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.back" label="返回" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+			     </td>
+		  	</tr>
+		  	
+		</table>  
+	</fieldset>
+
+</form>
+</span>
+</span>

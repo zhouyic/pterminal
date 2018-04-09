@@ -1,0 +1,60 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+	<table cellpadding="0" cellspacing="0" width=100% align=center>
+		<tr>
+	    	<td><b class=14font>当前分组</b><span jwcid="@Insert" value="ognl:domain.name" /><b class=14font>配置内容</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+	</table>
+	<br>
+  	<form jwcid="@Form" listener="ognl:listeners.processForm">
+  <table>
+    <tr>
+      <th align=center>配置项</th>
+      <th align=center>配置内容</th>
+    </tr>
+    <tr jwcid="listEdit">
+      <td ><input jwcid="@Insert" value="ognl:config.name" size="50" maxlength="40"/>
+      </td>
+      <td >
+      <span jwcid="@Conditional" condition="ognl:config.IIp">
+      <input jwcid="@TextField" value="ognl:config.ip" size="50" maxlength="50"/>
+      </span>
+      <span jwcid="@Conditional" condition="ognl:config.PPort">
+      <input jwcid="@TextField" value="ognl:config.ip" size="50" maxlength="20"/><input jwcid="@TextField" value="ognl:config.port" size="50" maxlength="10"/>
+      </span>
+      <span jwcid="@Conditional" condition="ognl:config.UUrl">
+      <input jwcid="@TextField" value="ognl:config.url" size="50" maxlength="20"/>
+      </span>
+      </td>
+    </tr>
+    <tr>
+    <td align="center" colspan="4">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit"
+			    		label="保存修改" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>
+    </tr>
+  </table>
+	</form>
+	<form jwcid = "@Form">
+		<tr>       
+			    	<td align="center" colspan="4">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.backAction" 
+			    		label="返回分组管理" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>
+				    <td align="center" colspan="4">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.configAction" 
+			    		label="管理系统配置项" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>
+		</tr>
+	</form>
+		
+				
+
+
+
+
+
+<!---html end--> 
+</span>
+ </span>

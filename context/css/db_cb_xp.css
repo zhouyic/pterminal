@@ -1,0 +1,224 @@
+body {
+	/*overflow:	auto;*/
+	margin:		0;
+	padding:	0;
+	height:		100%;
+	color:		ButtonText;
+	font-size:	12px;
+}
+div,td{font-size:12px;font-family:宋体}
+#nowstatus{
+	border-width:		1px;
+	border-left:1px solid buttonshadow;
+	border-right:1px solid buttonhighlight;
+	border-top:1px solid buttonshadow;
+	border-bottom:1px solid buttonhighlight;
+             background:#d9d9d9;
+             padding:			2px 3px 0px 5px;
+             height:20px
+}
+
+/*菜单背景颜色设置*/
+#topmenu{
+	/*border-top:1px solid white;*/
+	/*背景图片*/
+	/*background-image:url(../images/menubg1.gif)*/
+	/*背景颜色*/
+	background:#EEEDE9
+}
+/*菜单按钮立体效果*/
+.coolButton,
+.coolButtonHover,
+.coolButtonActiveHover,
+.coolButtonActive,
+.coolButtonActiveDisabled,
+.coolButtonDisabled,
+.coolButtonUpDisabled {
+	/*FILTER: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1); COLOR: #000000;*/
+	cursor: 			hand;
+	font-size: 		12px;
+	font-weight: 		normal;
+	padding:			2px 5px 2px 5px;
+	border:			0px solid ButtonFace;
+	white-space:		nowrap;
+	vertical-align:		middle;
+	
+	
+	
+}
+
+.coolButton img {
+	filter:				gray();
+}
+
+.coolButtonHover {/****主功能菜单onmouseover css****/
+	
+	/*WINDOWS传统风格*/
+	/*
+	border-width:		1px;
+	border-left-color:	Buttonface;
+	border-right-color:	ButtonShadow;
+	border-top-color:	Buttonface;
+	border-bottom-color:ButtonShadow;
+	padding:			1px 4px 1px 4px;		
+	*/
+	
+	/*XP风格*/
+	
+	border:1px solid #788FBB;
+	background:#DAE3F5;
+	padding:			1px 4px 1px 4px;
+	
+}
+
+.coolButtonActiveHover {/****主功能菜单已按下按钮的onmouseover css****/
+	/*windows传统风格*/
+	/*
+	border-width:		1px;
+	border-left-color:	ButtonShadow;
+	border-right-color:	ButtonHighlight;
+	border-top-color:	ButtonShadow;
+	border-bottom-color:ButtonHighlight;
+	padding:			2px 3px 0px 5px;
+	*/
+	
+	/*xp风格*/
+	padding:			2px 3px 0px 5px;
+	border:1px solid #788FBB;
+	background:#eeeeee;
+	color:#808080;
+}
+
+.coolButtonActive {/****主功能菜单已按下按钮 css****/
+	/*windows风格*/
+	/*
+	border-width:		1px;
+	border-left-color:	ButtonShadow;
+	border-right-color:	ButtonHighlight;
+	border-top-color:	ButtonShadow;
+	border-bottom-color:ButtonHighlight;
+	padding:			2px 3px 0px 5px;
+	background-image:	url(../images/unc_cbbg.gif);
+	*/
+	
+	/*xp风格*/
+	padding:			2px 3px 0px 5px;
+	border:1px solid #788FBB;
+	background:#eeeeee
+	
+}
+
+.coolButtonUpDisabled,
+.coolButtonActiveDisabled,
+.coolButtonDisabled {
+	padding:			2px 5px 2px 5px;
+	color:				GrayText;
+	border-width: 		0px;
+}
+
+.coolButtonActiveDisabled {
+	border-width:		1px;
+	border-left-color:	ButtonShadow;
+	border-right-color:	ButtonHighlight;
+	border-top-color:	ButtonShadow;
+	border-bottom-color:ButtonHighlight;
+	padding:			2px 3px 0px 5px;
+}
+
+.coolButtonUpDisabled {
+	border-width:		1px;
+	border-left-color:	ButtonHighlight;
+	border-right-color:	ButtonShadow;
+	border-top-color:	ButtonHighlight;
+	border-bottom-color:ButtonShadow;
+}
+
+
+.coolButtonUpDisabled img,
+.coolButtonActiveDisabled img,
+.coolButtonDisabled img {
+	-moz-opacity:		0.5;
+}
+
+/*常用功能二级子菜单CSS*/
+.coolsubButton {
+	/*FILTER: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1); */
+	COLOR: #222222;
+	border: 0px solid #d9d9d9;
+	padding: 2px 5px 2px 5px;
+	text-align: center;
+	cursor:hand;
+	font-size:12px;
+	font-family:ms shell dlg;
+	height:1pt;
+}
+
+
+
+.coolsubButton IMG	{filter:;}
+.menu2class{height:20pt;}
+
+
+/*版权信息 css*/
+.copyright{
+cursor: default;
+	background:#d9d9d9;
+	border-style:solid;
+	border-width:		1px;
+	border-left-color:	ButtonHighlight;
+	border-right-color:	ButtonShadow;
+	border-top-color:	ButtonHighlight;
+	border-bottom-color:ButtonShadow;
+	padding:0px;
+	font-family:ms shell dlg;line-height:16px
+}
+/*版权信息 css 结束*/
+
+.graytab{background:#d9d9d9}
+a 		{color:darkblue;font-size:12px;text-transform: none;text-decoration: none;}
+A:hover 		{COLOR: red; TEXT-DECORATION: none}
+a:visited 		{text-decoration: none}
+a.ablack 		{color:black;font-size:12px;text-transform: none;text-decoration: none;}
+
+/*表格头样式*/
+
+.unc_singletab	{border-top: 1px solid buttonshadow;
+			 font-size:12px;
+			 border-left: 1px solid buttonshadow;
+			 border-right: 1px solid buttonhighlight;
+			 border-bottom: 1px solid buttonhighlight;
+			 margin: 0px;}
+.unc_singletab thead td	{background-image:url(../images/menubg.gif); font-size:12px; border: 1px outset white;
+			 cursor: default; padding-top: 3px; padding- bottom:3px ;
+			 border-top: 1px solid buttonhighlight;
+			 border-left: 1px solid buttonhighlight;
+			 border-right: 1px solid buttonshadow;
+			 border-bottom: 1px solid buttonshadow;
+			 height: 20px;
+			 font-weight:bold;
+			 letter-spacing:2px
+			 }
+
+.unc_singletab tr			{background:;}
+.unc_singletab td 		{color: black; 
+				font-size:12px;
+				padding: 1px; 
+				padding-left: 5px; 
+				padding-right: 5px;
+				border-bottom: 1px solid buttonshadow;
+				border-right: 1px solid buttonshadow;
+				height:20px;
+				
+				}
+/*表格头样式结束*/
+select,input,textarea{font-size:12px}
+.binput{border-left:1px solid white;border-right:1px solid gray;border-top:1px solid white;border-bottom:1px solid gray;background-image:url(../images/menubg.gif);heght:18pt;font-size:12px}
+.sbinput{border-left:1px solid white;border-right:1px solid gray;border-top:1px solid white;border-bottom:1px solid gray;background:#d9d9d9;heght:18pt;font-size:12px;color:black}
+.lefttd{background-color:#eeeeee;padding-right:6px;letter-spacing:2px;height:24px;text-align:right ;}
+
+.lefttop{background:#d9d9d9}
+input{}
+.bigfont{font-size:14px;font-family:ms shell dlg;line-height:20px}
+.helpindex{border-left:1px solid white;border-right:1px solid gray;border-top:1px solid white;border-bottom:1px solid gray;background-image:url(../images/menubg.gif);heght:18pt;font-size:12px}
+.bbigfont{font-size:14px;color:darkblue;font-family:ms shell dlg;}
+li{line-height:20px}

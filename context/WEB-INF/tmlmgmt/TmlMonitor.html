@@ -1,0 +1,73 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+<script language="JavaScript"> 
+	function myRefresh() { 
+		document.Form0.submit();
+	} 
+	setInterval("myRefresh()",60000);
+</script>
+
+<form jwcid="@Form" direct="false" listener="ognl:listeners.refresh">
+<table cellspacing=0 cellpadding=0 width=100% align=center>
+	<tr>
+    	<td><b class=14font>终端监控</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+			<td width=200 align=right style="padding-right:4px"><img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.refresh" label="刷  新" class=but/><img src=images/but_r.gif border=0 align=absmiddle></td>           
+	</tr>
+</table>
+</form>
+                        
+<form jwcid="form2@Form">
+	<fieldset align="center" width="98%"><legend class=legtab  width="98%">终端状态</legend>
+	<table border="0" cellpadding="3" cellspacing="1"  jwcid="tableView@contrib:TableView" class="tab" width="98%"
+    source="ognl:data"
+   	columns= "!tmlId,!strTmlType,!strTmlStatus"
+    pageSize="200"    tableSessionStateManager="ognl:tableSessionStateManager">
+		<tr class="tbtitle">
+			<td jwcid="@contrib:TableColumns" />
+					<!-- span	jwcid="errorColumnHeader@Block"><font color="#0000CD" size="2" style="font-family:"宋体">异常</font></span -->
+					<span	jwcid="tmlIdColumnHeader@Block"><font color="#0000CD" size="2" style="font-family:"宋体">设备ID</font></span>
+					<span	jwcid="strTmlTypeColumnHeader@Block"><font color="#0000CD" size="2" style="font-family:"宋体">终端类型</font></span>
+					<span	jwcid="strTmlStatusColumnHeader@Block"><font color="#0000CD" size="2" style="font-family:"宋体">终端状态</font></span>
+					<span	jwcid="downlingColumnHeader@Block"><font color="#0000CD" size="2" style="font-family:"宋体">正在下载</font></span>
+					<span	jwcid="playlingColumnHeader@Block"><font color="#0000CD" size="2" style="font-family:"宋体">正在播放</font></span>
+		</tr>
+		<tr jwcid="@contrib:TableRows" row="ognl:terminal" class="tab_tr">
+			<td jwcid="@contrib:TableValues" align="center" />
+			<td jwcid="errorColumnValue@Block">
+					<span>
+							 <img src=images/normal.gif border=0 />
+					</span>		
+					<!-- span>
+							 <img src=images/offline.gif border=0 />
+					</span>			
+					<span>
+							 <a jwcid="@DirectLink" listener="ognl:listeners.showErrorAction" parameters="ognl:terminal.tmlId"><img src=images/unnormal.gif border=0 alt="异常" /></a> 
+					</span -->			
+			</td>
+			
+	      	<td jwcid="nameColumnValue@Block" align="center">
+				<a jwcid="@DirectLink" listener="ognl:listeners.showAction" parameters="ognl:terminal.tmlId"><span jwcid="@Insert" value="ognl:terminal.name" /></a>                                 
+			</td>
+			<td jwcid="downlingColumnValue@Block">
+	        	<span jwcid="@Foreach" source="ognl:terminal.downling" value="ognl:eachDown" >
+	        		<span jwcid="@Any"><span jwcid="@Insert" value="ognl:eachDown.tmlDoing" />，<span jwcid="@Insert" value="ognl:eachDown.downRate" />，
+	        		<span jwcid="@Insert" value="ognl:eachDown.downSource" /></span><BR>
+	        	</span>
+			</td>
+			<td jwcid="playlingColumnValue@Block">
+	        	<span jwcid="@Foreach" source="ognl:terminal.playling" value="ognl:eachDown" >
+	        		<span jwcid="@Any"><span jwcid="@Insert" value="ognl:eachDown.tmlDoing" /></span><BR>
+	        	</span>
+			</td>
+    		<td jwcid="operationColumnValue@Block">
+	        	<a jwcid="@DirectLink" listener="ognl:listeners.showAction" parameters="ognl:terminal.tmlId"><img src=images/db-resource.gif border=0 alt="详情"/></a>     
+	        	<!-- a jwcid="@DirectLink" listener="ognl:listeners.configAction" parameters="ognl:terminal.tmlId"><img src=images/config.gif border=0 alt="配置"/></a -->                                                 
+    		</td> 
+			</tr>
+          <tr class="tab_tr"><td align="right" colspan="12">共<span jwcid="@Insert" value="ognl:data.size"/>条&nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+				 </table>	
+	</fieldset>    
+</form>
+</span>
+</span>

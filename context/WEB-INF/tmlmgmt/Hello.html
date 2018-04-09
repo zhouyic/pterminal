@@ -1,0 +1,30 @@
+<html>
+
+    <head>
+
+    <title>我的第一个 Tapestry 弹出窗口</title>
+
+    </head>
+
+<script language="javascript">
+
+    function closeWin(){
+
+       window.close();
+
+    }
+	function myRefresh() { 
+		document.Form0.submit();
+	}
+	setInterval("myRefresh()",6000);
+</script>
+
+    <body jwcid="@Body">
+
+       <SPAN jwcid="@Insert" value="ognl:msg" />
+
+       <input type="button" onClick="closeWin()" value="我想关闭"/>
+
+    </body>
+
+</html>

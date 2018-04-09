@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="tml.sysmgmt.Dom" table="SYS_DOM">
+		<id name="id" type="integer" column="DOMID" unsaved-value="-1">			
+			<generator class="hilo">
+				<param name="table">SYS_USERID_GEN</param>
+				<param name="column">NEXT_DOM</param>
+				<param name="max_lo">10</param>
+			</generator>
+		</id>
+		<property name="name"       type="string" column="DONAME"/>
+		<property name="parentId"   type="int"	  column="PARENTID"/>
+		<property name="parentName" type="string" column="PARENTNAME"/>
+		<property name="desc"       type="string" column="DDESC"/>
+		<property name="creator"    type="string" column="CREATOR"/>
+		<property name="createTime" type="timestamp" column="CREATE_TIME" />
+		<property name="type"   	type="int"	  column="TYPE"/>
+		       
+		<set name="users" table="SYS_USER_DOM" inverse="true">
+			<key column="DOMID"/>
+			<many-to-many column="USERID" class="tml.sysmgmt.User"/>
+		</set>
+	
+		
+	</class>
+</hibernate-mapping>

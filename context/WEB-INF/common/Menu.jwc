@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component-specification PUBLIC
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN"
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+
+<component-specification  class="dsp.tml.common.web.Menu"  allow-informal-parameters="no">
+   	<!--property-specification name="menuData" type="java.util.List" persistent="yes"/-->     	
+  	<!--property-specification name="menu" type="dsp.tml.sysmgmt.Role"/-->     	   	
+   	<property-specification name="bigMenuData" type="java.util.List" persistent="yes"/>     	
+  	<!--property-specification name="bigMenu" type="dsp.tml.common.TreeNodeModel"/-->     	   	
+</component-specification>
+

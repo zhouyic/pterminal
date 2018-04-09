@@ -1,0 +1,20 @@
+#Mon Sep 24 11:27:39 CST 2012
+eclipse.preferences.version=1
+encoding//context/WEB-INF/area/AreaManage.html=UTF-8
+encoding//context/WEB-INF/area/ConfigAdd.html=UTF-8
+encoding//context/WEB-INF/area/ConfigAdd.page=UTF-8
+encoding//context/WEB-INF/area/ConfigAddRemove.html=UTF-8
+encoding//context/WEB-INF/area/ConfigAddRemove.page=UTF-8
+encoding//context/WEB-INF/area/ConfigManage.html=UTF-8
+encoding//context/WEB-INF/area/ConfigUpdate.html=UTF-8
+encoding//context/WEB-INF/log/QueryLog.html=UTF-8
+encoding//context/WEB-INF/tmlmgmt/DispatchSpe.html=UTF-8
+encoding//context/WEB-INF/tmlmgmt/Hello.html=UTF-8
+encoding//context/WEB-INF/tmlmgmt/InsertServer.html=UTF-8
+encoding//context/WEB-INF/tmlmgmt/ListManage.html=UTF-8
+encoding//context/WEB-INF/tmlmgmt/ListManage.page=UTF-8
+encoding//context/WEB-INF/tmlmgmt/RegesteTerminal.html=UTF-8
+encoding//context/WEB-INF/tmlmgmt/TmlManage.html=UTF-8
+encoding//context/WEB-INF/tmlmgmt/UpdateServer.html=UTF-8
+encoding//db/mysql/insert_sysmgmt.sql=UTF-8
+encoding/<project>=UTF-8

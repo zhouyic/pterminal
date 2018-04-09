@@ -1,0 +1,42 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+   <script type="text/javascript" language="javascript" src="js/calendar.js"></script>
+    
+	<table cellpadding="0" cellspacing="0" width=100% align=center>
+		<tr>
+	    	<td><b class=14font>更新终端分组</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+	</table>
+	<br>
+        
+	<form jwcid="form0@Form" direct="false">	
+		<fieldset class=setclass align=center width="98%">
+		    <legend class=legtab>查询条件</legend>
+			<table border="0" cellpadding="0" cellspacing="3"  width=98% align=center>
+			    <tr>
+			    	<td align="right">终端MAC：</td>
+				 	<td align="left" width=132>
+		    	    	<input jwcid="@Insert" value="ognl:terminal.tmlId"/>
+			        </td>
+			    	<td align="right">当前分组：</td>
+		    	    <td align="left">
+			        	<input jwcid="@Insert" value="ognl:terminal.groupName"/>
+			        </td>
+			    </tr>
+			</table>
+		</fieldset>
+	</form>
+
+	<form jwcid="form1@Form" direct="false"> 
+		<fieldset class=setclass align=center width="98%">
+	    	<legend class=legtab width="50%">分组列表</legend>
+				<select jwcid="domType@PropertySelection" style=width:30% model="ognl:domTypeModel" value="ognl:domType" submitOnChange="false"/>
+				
+		</fieldset>
+		<center>
+			<img src=images/but_l.gif border=0 align=absmiddle><input type="submit" jwcid="@Submit" listener="ognl:listeners.submit" value='更  新' class=but/><img src=images/but_r.gif border=0 align=absmiddle>&nbsp;&nbsp;
+		</center>
+	</form>
+</span>
+</span>

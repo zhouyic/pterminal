@@ -1,0 +1,79 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+<table cellspacing=0 cellpadding=0 width=100% align=center>
+	<tr>
+    	<td><b class=14font>设置操作员域</b></td>
+		<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+	</tr>
+</table>
+<br>
+	<fieldset class=setclass align=center width="98%">
+		<legend class="legtab" width="98%">操作员资料</legend>
+		<table border="0" cellpadding="0" cellspacing="1" width="95%" align="center">
+			<tr> 
+		    	<td align="right">用户名:</td>
+			    <td align="left"><input jwcid="@Insert" value="ognl:user.name"/></td>
+		    	<td align="right">E-mail地址:</td>
+			    <td align="left"><input jwcid="@Insert" value="ognl:user.email"/></td>
+		  	</tr>
+			<tr> 
+		    	<td align="right">固定电话:</td>
+		    	<td align="left"><input jwcid="@Insert" value="ognl:user.phone"/></td>
+		    	<td align="right">移动电话:</td>
+			    <td align="left"><input jwcid="@Insert" value="ognl:user.mobile"/></td>
+		  	</tr>
+		</table>  
+	</fieldset>	
+
+<form jwcid="form1@Form" >
+<fieldset class=setclass align=center width="98%">
+    	 <legend class=legtab width="98%">已选域</legend>
+				<table align="center" border="0" cellpadding="3" cellspacing="1"  jwcid="tableView0@contrib:TableView" class="tab" width="95%"
+				    source="ognl:data0"
+			    	columns= "name:域名称:name,!operation0"
+				    pageSize="12" initialSortColumn="name" initialSortOrder="ognl:false"
+				    tableSessionStateManager="ognl:tableSessionStateManager">
+					<tr class="tbtitle">
+						<td jwcid="@contrib:TableColumns"/>
+                        <span jwcid="operation0ColumnHeader@Block">减少</span>                    
+					</tr>                
+					<tr jwcid="@contrib:TableRows" row="ognl:dto0" class="tab_tr">			
+            	        <td jwcid="@contrib:TableValues" align="center"/>
+						<td jwcid="operation0ColumnValue@Block">
+							<a jwcid="@DirectLink" listener="ognl:listeners.reduceAction" parameters="ognl:dto0.id"><img src=images/arrowdown.gif border=0 alt="减少"/></a>
+						</td>		                        
+	                </tr>
+                    <tr class="tab_tr"><td align="right" colspan="8">共<span jwcid="@Insert" value="ognl:data0.size"/>条 &nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+				</table>	
+</fieldset> 
+	<br>
+<fieldset class=setclass align=center width="98%">
+    	 <legend class=legtab width="98%">备选域</legend>
+				<table align="center" border="0" cellpadding="3" cellspacing="1"  jwcid="tableView1@contrib:TableView" class="tab" width="95%"
+				    source="ognl:data1"
+			    	columns= "name:域名称:name,!operation1"
+				    pageSize="12" initialSortColumn="parent" initialSortOrder="ognl:false"
+				    tableSessionStateManager="ognl:tableSessionStateManager">
+					<tr class="tbtitle">
+						<td jwcid="@contrib:TableColumns"/>
+                        <span jwcid="operation1ColumnHeader@Block">增加</span>                    
+					</tr>                
+					<tr jwcid="@contrib:TableRows" row="ognl:dto1" class="tab_tr">			
+            	        <td jwcid="@contrib:TableValues" align="center"/>
+						<td jwcid="operation1ColumnValue@Block">
+							<a jwcid="@DirectLink" listener="ognl:listeners.addAction" parameters="ognl:dto1.id"><img src=images/arrowup.gif border=0 alt="增加"/></a>
+						</td>		                        
+	                </tr>
+                    <tr class="tab_tr"><td align="right" colspan="8">共<span jwcid="@Insert" value="ognl:data1.size"/>条 &nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+				</table>	
+</fieldset> 
+
+	<center>
+		<br>
+		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.submit" label="确定" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.back" label="返回" class=but/><img src=images/but_r.gif border=0 align=absmiddle>		
+	</center>
+</form>   
+</span>
+</span>

@@ -1,0 +1,155 @@
+<span jwcid="$content$">
+
+<span jwcid="@Border">
+
+<script language="JavaScript">
+
+function checkField(){
+	var customerId = document.getElementById("customerId");
+	var password = document.getElementById("password");
+	var mac = document.getElementById("mac");
+
+	if(check_null(customerId.value)){	
+		  window.alert("请选择分组！");
+	}else if(check_null(password.value)){	
+		  window.alert("请选择区域！");
+	}else if(check_null(mac.value)){	
+		  window.alert("Mac地址不能为空！");
+	}else if(!check_deviceID(mac.value)){	
+		  window.alert("Mac地址格式不正确,定长12位！");
+	}else{
+		  return true;
+	}
+	return false;
+}
+
+
+function check_deviceID(check_obj){
+	var tmp,j,strTemp;
+
+	strTemp="1234567890abcdefABCDEF";
+
+	if(check_obj.length != 12){
+	  return false;
+	}
+
+	for (i=0;i<12;i++){
+	  j=strTemp.indexOf(check_obj.charAt(i));
+	  if(j==-1){
+	       return false;
+	  }
+	}	   
+	return true;
+}
+</script>
+
+
+
+	<table cellspacing=0 cellpadding=0 width=100% align=center>
+
+		<tr>
+
+		   	<td><b class=14font>终端注册</b></td>
+
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+
+		</tr>
+
+	</table>
+
+
+<fieldset class=setclass align=center width="98%"><legend class=legtab>输入规则提示</legend>
+
+	<table border="0" cellpadding="1" cellspacing="3"  width=98% align=center >	
+
+    	<tr>        
+
+	    	<td align="left"><font color="#FF0000">MAC地址为12位，格式为：0012407E0B64</font>
+
+	        </td>
+
+		</tr>   
+
+	</table>
+
+</fieldset>
+
+    <br>
+
+    <br>
+
+<fieldset class=setclass align=center width="98%">
+<legend class="legtab" width="98%">注册资料</legend>
+<table border="0" cellpadding="0" cellspacing="3"  width=98% align=center>
+	<!-- form jwcid="form0@Form" listener="ognl:listeners.formSubmit">
+		<tr>
+	    	<td align="right" width=132>所属分组：</td>
+		 	<td align="left">
+    	    	<select id="groupId" jwcid="groupId@PropertySelection" style=width:25% model="ognl:group" value="ognl:groupId" submitOnChange="true"/>
+	        </td>
+	    </tr>
+	</form -->
+	
+	<form jwcid="form2@Form">
+		<!-- tr>
+	    	<td align="right" width=132>所属区域：</td>
+		 	<td align="left">
+    	    	<select id="unitId" jwcid="unitId@PropertySelection" style=width:25% model="ognl:unit" value="ognl:unitId" submitOnChange="false"/>
+	        </td>
+	    </tr -->
+	    <tr>
+	    	<td align="right" width=150>客户类型：</td>
+		 	<td align="left">
+    	    	<select id="cuType" jwcid="cuType@PropertySelection" style=width:30% model="ognl:cuTypeModel" value="ognl:cuType" submitOnChange="false"/>
+	        </td>
+	    </tr>
+	    <tr>
+	    	<td align="right"  width=150>终端类别：</td>
+		 	<td align="left">
+    	    	<select jwcid="tmlType@PropertySelection" style=width:30% model="ognl:typeModel" value="ognl:tmlType" submitOnChange="false"/>
+	        </td>
+	    </tr>
+	    <tr>
+	    	<td align="right">终端MAC：</td>
+		 	<td align="left">
+    	    	<input id="mac" jwcid="mac@TextField" value="ognl:mac" maxlength="12" size="33"/>
+	        </td>
+	    </tr>
+	    <tr>
+	    	<td align="right">用户名：</td>
+		 	<td align="left">
+    	    	<input id="customerId" jwcid="customerId@TextField" value="ognl:customerId" maxlength="12" size="33"/>
+	        </td>
+	    </tr>
+	    <tr>
+	    	<td align="right">密码：</td>
+		 	<td align="left">
+    	    	<input id="password" jwcid="password@TextField" value="ognl:password" maxlength="12" size="33"/>
+	        </td>
+	    </tr>
+	    <tr> 
+			<td align="right">描述：</td>
+			<td align="left" colspan="3">
+				<input jwcid="text@TextArea" value="ognl:text" rows=3 cols=30/>
+			</td>                             
+   		</tr>
+   		<tr>
+	    	<td align="right"  width=150>所属组：</td>
+		 	<td align="left">
+    	    	<select jwcid="domType@PropertySelection" style=width:30% model="ognl:domTypeModel" value="ognl:domType" submitOnChange="false"/>
+	        </td>
+	    </tr>
+	    <tr></tr><tr></tr><tr></tr>
+	    <tr>       
+	    	<td align="center" colspan="4">
+	    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" onclick="JavaScript:return checkField()" listener="ognl:listeners.submit" label="确  定" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+		    </td>
+		</tr>
+	</form>
+</table>
+</fieldset>
+
+
+</span>
+
+</span>

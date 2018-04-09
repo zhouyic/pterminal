@@ -1,0 +1,86 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+	
+<script type="text/javascript" language="javascript" src="js/calendar.js"></script>
+
+<table cellspacing=0 cellpadding=0 width=100% align=center>
+	<tr>
+    	<td><b class=14font>查看日志</b></td>
+		<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+	</tr>
+</table>
+
+<fieldset class=setclass align=center width="98%">
+    <legend class=legtab>规则</legend>
+	<table cellspacing=0 cellpadding=0 width=100% align=center>
+	   <tr>
+        	<td align="left"><font color="#FF0000">1.系统管理员可以查看全部操作员的操作日志</font></td>
+	   </tr>
+       <tr>
+        	<td align="left"><font color="#FF0000">2.其余操作员只能查看自己的操作日志</font></td>
+	   </tr>   
+	</table>
+</fieldset>
+
+<br>
+<form jwcid="form0@Form" direct="false"> 
+<fieldset class=setclass align=center width="98%">
+    <legend class=legtab>查询条件</legend>
+	<table border="0" cellpadding="0" cellspacing="3"  width=98% align=center >
+	    <tr>       
+    	    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	     	   操作员:<input jwcid="@TextField" value="ognl:oper" class=txtinput size="20" maxlength="20"/>
+	        </td>
+    	    <td align="left">&nbsp;&nbsp;
+	     	   操作描述:<input jwcid="@TextField" value="ognl:desc" class=txtinput size="20" maxlength="20"/>
+	        </td>			
+  		</tr>
+	    <tr>       
+    	    <td  align="left">&nbsp;&nbsp;
+         	     起始日期:<input jwcid="@TextField" id="afterDate"  value="ognl:afterDate" size="20"  onFocus="CalendarWebControl.show(this,true,this.value);" class=txtinput/>
+		   </td>
+    	   <td  align="left">&nbsp;&nbsp;
+	              截至日期:<input jwcid="@TextField" id="beforeDate"  value="ognl:beforeDate" size="20"  onFocus="CalendarWebControl.show(this,true,this.value);" class=txtinput/>
+			</td>
+	    	 <td align="left">&nbsp;&nbsp;
+    	    	    <img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.search" label="查询" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+			</td>     
+  		</tr>
+	</table>
+</fieldset>
+</form>
+<span jwcid="hasData@Conditional" condition="ognl:hasData">
+<form jwcid="form2@Form" direct="false"> 
+<fieldset class=setclass align=center width="98%">
+    	  <legend class=legtab>查询结果</legend>
+				<table border="0" cellpadding="3" cellspacing="1"  jwcid="tableView@contrib:TableView" class="tab" width="98%" 
+				source="ognl:data" columns= "who:操作员:who,time:操作时间:time,desc:执行操作描述:desc" 
+				pageSize="20" initialSortColumn="time" initialSortOrder="ognl:true" 
+				tableSessionStateManager="ognl:tableSessionStateManager">
+					<tr class="tbtitle">
+						<td jwcid="@contrib:TableColumns" align="center"/>
+					</tr>                
+					<tr jwcid="@contrib:TableRows" row="ognl:log" class="tab_tr">			
+            	        <td jwcid="@contrib:TableValues" align="center"/>
+				        <td jwcid="timeColumnValue@Block" align="center">
+				            <span jwcid="@Insert" value="ognl:formatTime(log.time)" />                            
+				        </td>                    	        
+	                </tr>
+                    <tr class="tab_tr"><td align="right" colspan="8">共<span jwcid="@Insert" value="ognl:data.size"/>条 &nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+				</table>  
+				<table border="0" cellpadding="3" cellspacing="1"  width=98% align=center >        
+					<tr>            
+            	<td align="center">
+            	 <img src=images/but_l.gif border=0 align=absmiddle><input jwcid="downloadExcel@Submit" label="打印操作日志" listener="ognl:listeners.downloadExcel"  class=but/><img src=images/but_r.gif border=0 align=absmiddle>&nbsp;&nbsp;
+           		</td>           		           		</tr>                
+			  </table>
+</fieldset>   
+</form> 
+</span>
+
+ <span jwcid="@Conditional" condition="ognl:isDownload">    
+     <script language="javascript">        window.open ("<span jwcid="@Insert" value="ognl:strFileURL" />","_parent")
+     </script>
+ </span>
+</span>
+</span>

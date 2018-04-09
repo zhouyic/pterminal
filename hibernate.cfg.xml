@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 2.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-2.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	
+	<!-- for mysql begin -->
+		<property name="dialect">
+			 net.sf.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.driver_class">			
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://127.0.0.1:3306/tml?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true		
+		</property>		
+		<property name="connection.username">tml</property>
+		<property name="connection.password">3NMediaSiTVTML</property>
+		<!-- property name="connection.password">tml</property -->
+		<!--	<property name="show_sql">true</property>-->
+		<!-- property name="hibernate.hbm2ddl.auto">validate</property -->
+	<!-- for mysql end  -->
+		
+	<!-- for PostgreSQL begin-->
+		<!--property name="dialect">
+			 net.sf.hibernate.dialect.PostgreSQLDialect
+		</property>
+		<property name="connection.driver_class">			
+			org.postgresql.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:postgresql://127.0.0.1:5432/com		
+		</property>		
+		<property name="connection.username">dsp</property>
+		<property name="connection.password">123456</property-->
+	<!-- for PostgreSQL end -->
+		
+	<!-- for hsql begin-->
+		<!--property name="dialect">
+			 net.sf.hibernate.dialect.HSQLDialect
+		</property>
+		<property name="connection.driver_class">			
+			org.hsqldb.jdbcDriver
+		</property>
+		<property name="connection.url">
+			jdbc:hsqldb:hsql://localhost/	
+		</property>
+		<property name="connection.username">dsp</property>
+		<property name="connection.password">123456</property-->
+	<!-- for hsql end-->
+	
+	<!-- for dsp demo oracle begin>
+		<property name="dialect">
+			 net.sf.hibernate.dialect.Oracle9Dialect
+		</property>
+		<property name="connection.driver_class">			
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="connection.url">
+			jdbc:oracle:thin:@192.168.100.40:1521:tml
+		</property>			
+		<property name="connection.username">tml</property>
+		<property name="connection.password">tml</property -->
+	<!-- for demo oracle end-->	
+
+		<property name="hibernate.connection.pool_size">10</property>
+		<property name="show_sql">true</property>		
+        <property name="format_sql">true</property>
+        
+		<mapping resource="tml/log/Log.hbm.xml" />
+		
+		<mapping resource="tml/sysmgmt/User.hbm.xml" />
+		<mapping resource="tml/sysmgmt/History.hbm.xml" />
+		<mapping resource="tml/sysmgmt/Role.hbm.xml" />
+		<mapping resource="tml/sysmgmt/Dom.hbm.xml" />
+		
+		<mapping resource="tml/configure/Property.hbm.xml" />
+		
+		<!-- tml -->
+		<mapping resource="tml/tmlmgmt/domain/TerminalEntity.hbm.xml" />
+		
+		
+	</session-factory>
+</hibernate-configuration>

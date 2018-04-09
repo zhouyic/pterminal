@@ -1,0 +1,21 @@
+﻿部署注意事项：
+古北部署时，需把communicate.pkmgmt.stb.ListRequest文件中，验证终端合法性，修改为flg = service.certifySTB(tmlId, userName, encryptedPassword);
+文广反之。
+如下：
+【// 验证终端合法性
+//GUBEI
+flg = service.certifySTB(tmlId, userName, encryptedPassword);
+
+//SITV
+//flg = Authenticate.check(userName, encryptedPassword, tmlId, PackageConstant.STBPwdMode.md5);
+】
+
+
+修改记录：
+2011-12-14 修改了bossclient.jar，boss client做了超时控制。
+2012-2-10  更新snmp的extendAgentx.jar包。
+2012-8-20  增加机顶盒分组管理，增加create_conf.sql和insert_conf.sql。
+2012-9-19  更新了insert_conf.sql。
+2012-10-9  更新了create_conf.sql。在TML_BASE表中新增telNo字段
+2012-10-11 合并数据库Init文件，初始化时只需要执行tmlinit.sql即可
+2012-10-19 SYS_CONFIGURE表新增配置项drm_port

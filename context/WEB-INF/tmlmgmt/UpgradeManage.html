@@ -1,0 +1,103 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+   <script type="text/javascript" language="javascript" src="js/calendar.js"></script>
+    <script type="text/javascript">
+	function checkField(){
+		var mac = document.getElementById("mac");
+		var ip = document.getElementById("ip");
+		if(check_null(mac.value)){
+			window.alert("请输入终端mac！");
+		}else if(check_null(ip.value)){	
+			  window.alert("服务器IP/URL不能为空！");
+		}else{
+			  return true;
+		}
+		return false;
+	}
+	</script>
+	<table cellpadding="0" cellspacing="0" width=100% align=center>
+		<tr>
+	    	<td><b class=14font>测试升级服务器</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+	</table>
+	<br>
+        
+    <span jwcid="@Conditional" condition="ognl:isSearch">
+	<form jwcid="form0@Form" direct="false">
+		<fieldset class=setclass align=center width="98%">
+		    <legend class=legtab>查询条件</legend>
+			<table border="0" cellpadding="0" cellspacing="3"  width=98% align=center>
+			    <tr>
+			    	<td align="right" width="230">终端MAC：</td>
+			    	<td align="left">
+			        	<input jwcid="tmlId@TextField" value="ognl:tmlId" size="20"/>
+			        </td>      
+			    	<td align="center" width="110">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.searchAction" 
+			    		label="查  询" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>
+				    <td align="left" width="280">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.addAction" 
+			    		label="新  增" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td> 
+		  		</tr>
+			</table>
+		</fieldset>
+		</form>
+		</span>
+		
+		<span jwcid="@Conditional" condition="ognl:isAdd">
+		<form jwcid="form2@Form" direct="false">
+		<fieldset class=setclass align=center width="98%">
+		    <legend class=legtab>新增测试服务器</legend>
+			<table border="0" cellpadding="0" cellspacing="3"  width=98% align=center>
+			    <tr>
+			    	<td align="right">终端MAC</td>
+		    	    <td align="left"  width="200">
+			        	<input id="mac" jwcid="newTmlId@TextField" value="ognl:newTmlId" size="20"/>
+			        </td>
+			        <td align="right" width="100">测试升级服务器</td>
+		    	    <td align="left">
+			        	<input id="ip" jwcid="newIp@TextField" value="ognl:newIp" size="20"/>
+			        </td>
+			        <td align="center"  width="110">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" onclick="JavaScript:return checkField()" listener="ognl:listeners.addNewAction" 
+			    		label="保  存" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>
+				    <td align="left">
+			    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.searchAction" 
+			    		label="查  询" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+				    </td>
+		  		</tr>
+			</table>
+		</fieldset>
+	</form>
+	</span>
+
+	<form jwcid="form1@Form" direct="false"> 
+		<fieldset class=setclass align=center width="98%">
+	    	<legend class=legtab>查询结果</legend>
+				<table border="0" cellpadding="3" cellspacing="1" jwcid="tableView@contrib:TableView" class="tab" width="98%"
+				    source="ognl:data"
+			    	columns="tmlId:终端MAC:tmlId,ip:测试升级服务器IP:ip,!operation:操作:operatioin"
+				    pageSize="10" initialSortColumn="tmlId" 
+					initialSortOrder="ognl:false"
+				    tableSessionStateManager="ognl:tableSessionStateManager">
+					<tr class="tbtitle">
+						<td jwcid="@contrib:TableColumns" align="center"/>
+					</tr>                
+					<tr jwcid="@contrib:TableRows" row="ognl:upgrade" class="tab_tr">			
+	        	  		<td jwcid="@contrib:TableValues" align="center"/>
+	            		<td jwcid="operationColumnValue@Block">                           
+	            	  		<a jwcid="@DirectLink" listener="ognl:listeners.deleteAction" parameters="ognl:upgrade.tmlId" onclick="JavaScript:return confirm('确定删除吗?')">
+                                  <img src=images/del.gif border=0 alt="删除"/>
+                            </a>
+		            	</td>		                             	        
+	        		</tr>
+	     			<tr class="tab_tr"><td align="right" colspan="20">共<span jwcid="@Insert" value="ognl:data.size"/>条&nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+				</table> 
+		</fieldset>
+	</form>
+</span>
+</span>

@@ -1,0 +1,156 @@
+<span jwcid="$content$">
+
+<span jwcid="@Border">
+
+<script language="javascript">
+
+    function closeWin(){
+
+       window.close();
+
+    }
+	function myRefresh() { 
+		document.Form0.submit();
+	} 
+	setInterval("myRefresh()",120000);
+</script>
+
+<table cellspacing=0 cellpadding=0 width=100% align=center>
+
+		<tr>
+
+		   	<td><b class=14font>终端系统信息</b></td>
+
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+
+		</tr>
+
+</table>
+
+<form jwcid="@Form" direct="false" listener="ognl:listeners.refresh">
+<table cellspacing=0 cellpadding=0 width=100% align=center>
+	<tr>
+			<td width=200 align=left style="padding-right:4px;color:red;">时间有延迟，请等待几分钟。</td>
+			<td align=right style="padding-right:4px"><img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.refresh" label="刷  新" class=but/><img src=images/but_r.gif border=0 align=absmiddle></td>
+			<td align="right" width="80px">
+				<img src=images/but_l.gif border=0 align=absmiddle><input type="submit" jwcid="@Submit" onClick="closeWin()" value="关  闭" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+			</td>         
+	</tr>
+</table>
+</form>
+
+<form jwcid="form1@Form" >
+
+	<fieldset class=setclass align=center width="98%">
+
+		<legend class="legtab" width="98%">基本信息资料</legend>
+
+		<table border="0" cellpadding="3" cellspacing="1"  jwcid="tableView1@contrib:TableView" class="tab" width="100%"
+			source="ognl:data"
+			columns= "tmlId:STB mac:tmlId,tmlVersion:STB 版本:tmlVersion,leftDiskSize:剩余硬盘空间:leftDiskSize,
+			ableMem:可用内存:ableMem,portalVersion:PORTAL 版本:portalVersion,portalUrl:PORTAL URL:portalUrl,
+			tmlPlayling:正在播放:tmlPlayling,	tmlApps:应用:tmlApps,tmlSpelist:SPE列表:tmlSpelist,updateDate:更新时间:updateDate"
+			pageSize="20"  initialSortOrder="ognl:false"
+			tableSessionStateManager="ognl:tableSessionStateManager">
+
+			<tr class="tbtitle">
+				<td jwcid="@contrib:TableColumns" align="center"/>
+			</tr>
+
+			<tr jwcid="@contrib:TableRows" row="ognl:tmlSys" class="tab_tr">			
+				<td jwcid="@contrib:TableValues" align="center"/>
+				<td jwcid="tmlSpelistColumnValue@Block">
+    	        	<span jwcid="@Foreach" source="ognl:tmlSys.tmlSpelist" value="ognl:eachSpe" >
+    	        		<span jwcid="@Any"><span jwcid="@Insert" value="ognl:eachSpe" /></span><BR>
+    	        	</span>
+				</td>
+			</tr>
+		</table>
+		<br></br>
+		<table border="0" cellpadding="3" cellspacing="1"  jwcid="tableView2@contrib:TableView" class="tab" width="100%"
+			source="ognl:doinfo"
+			columns= "tmlDoing:下载内容:tmlDoing,downRate:下载速率:downRate,downSource:下载源:downSource,inTime:更新时间:inTime"
+			pageSize="20"  initialSortOrder="ognl:false"
+			tableSessionStateManager="ognl:tableSessionStateManager">
+
+			<tr class="tbtitle">
+				<td jwcid="@contrib:TableColumns" align="center"/>
+			</tr>
+
+			<tr jwcid="@contrib:TableRows" row="ognl:info" class="tab_tr">			
+				<td jwcid="@contrib:TableValues" align="center"/>
+			</tr>
+		</table>
+		
+		<!-- table>
+			<tr>
+			    	<td align="right" width="100px">终端MAC：</td>
+		    	    <td align="left">
+			        	<input jwcid="tmlId@Insert" value="ognl:base.tmlId" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">STB 版本：</td>
+		    	    <td align="left">
+			        	<input jwcid="tmlVersion@Insert" value="ognl:base.tmlVersion" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">剩余硬盘空间：</td>
+		    	    <td align="left">
+			        	<input jwcid="leftDiskSize@Insert" value="ognl:base.leftDiskSize" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">可用内存：</td>
+		    	    <td align="left">
+			        	<input jwcid="ableMem@Insert" value="ognl:base.ableMem" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">PORTAL 版本：</td>
+		    	    <td align="left">
+			        	<input jwcid="portalVersion@Insert" value="ognl:base.portalVersion" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">PORTAL URL：</td>
+		    	    <td align="left">
+			        	<input jwcid="portalUrl@Insert" value="ognl:base.portalUrl" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">正在播放：</td>
+		    	    <td align="left">
+			        	<input jwcid="tmlPlayling@Insert" value="ognl:base.tmlPlayling" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">正在下载：</td>
+		    	    <td align="left">
+			        	<input jwcid="tmlDownling@Insert" value="ognl:base.tmlDownling" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">应用：</td>
+		    	    <td align="left">
+			        	<input jwcid="tmlApps@Insert" value="ognl:base.tmlApps" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">SPE列表：</td>
+		    	    <td align="left">
+			        	<input jwcid="tmlSpelist@Insert" value="ognl:base.tmlSpelist" size="20"/>
+			        </td>
+			    </tr>
+			    <tr>
+			    	<td align="right">更新时间：</td>
+		    	    <td align="left">
+			        	<input jwcid="updateDate@Insert" value="ognl:base.updateDate" size="20"/>
+			        </td>
+			    </tr>
+		</table -->
+	</fieldset>
+</form>
+</span>
+</span>

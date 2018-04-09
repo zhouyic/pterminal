@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="tml.log.Log" table="SYS_LOG">
+		<id name="id" type="integer" column="ID">
+			<generator class="hilo">
+				<param name="table">SYS_LOG_SEQ</param>
+				<param name="column">NNEXT</param>
+				<param name="max_lo">10</param>
+			</generator>
+		</id>
+		<property name="who" type="string" column="WWHO" />
+		<property name="time" type="timestamp" column="TTIME" />
+		<property name="desc" type="string" column="DDESC" />
+	</class>
+</hibernate-mapping>

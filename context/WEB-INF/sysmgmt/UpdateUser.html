@@ -1,0 +1,90 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+
+<script language="JavaScript">
+function checkField(){
+	with(document.forms[0]){
+		if(!check_email(email.value)){
+			window.alert("email格式不对！");
+		}else	if(!check_phone(phone.value)){
+			window.alert("固定电话格式不对！");
+		}else	if(!check_phone(mobile.value)){
+			window.alert("移动电话格式不对！");
+		}else{	
+			return true;
+		}
+		return false;
+	}
+}
+</script>
+
+
+<form jwcid="form1@Form" >
+	<table cellspacing=0 cellpadding=0 width=100% align=center>
+		<tr>
+		   	<td><b class=14font>修改操作员</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+		<tr>	
+		 		
+		   	<!--td align="right">
+        	<a jwcid="@DirectLink" listener="ognl:listeners.updateUserRole" parameters="ognl:user.name" align=absmiddle>
+		   			<img src="images/power.png" border=0>
+		   	 </a>
+		   	 <a jwcid="@DirectLink" listener="ognl:listeners.updateUserDom" parameters="ognl:user.name" align=absmiddle>
+		   			<img src="images/level.png" border=0>			   		
+		   	 </a-->
+		   <td align="right">
+		   	  &nbsp;&nbsp;&nbsp;&nbsp;
+					<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit"  listener="ognl:listeners.updateUserRole"  label="权限管理" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+	       </td>          		   	
+		</tr>
+	</table>
+	<br>
+	<fieldset align="center" width="100%">
+		<legend class="legtab" width="100%">操作员资料</legend>
+		<br>
+		<table border="0" cellpadding="0" cellspacing="3" width="85%" align="center">
+
+			<tr> 
+		    	<td align="right">用户名:</td>
+			    <td align="left">
+			       <input jwcid="@Insert" value="ognl:user.name"/>
+			     </td>
+		  	</tr>
+			<tr> 
+		    	<td align="right">E-mail:</td>
+			    <td align="left">
+			       <input jwcid="email@TextField" value="ognl:user.email" maxlength="20" size="20"/>
+			     </td>
+		  	</tr>
+			<tr> 
+		    	<td align="right">固定电话:</td>
+			    <td align="left">
+			       <input jwcid="phone@TextField" value="ognl:user.phone" maxlength="20" size="20"/>
+			     </td>
+		  	</tr>
+			<tr> 
+		    	<td align="right">移动电话:</td>
+			    <td align="left">
+			       <input jwcid="mobile@TextField" value="ognl:user.mobile" maxlength="20" size="20"/>
+			     </td>
+		  	</tr>
+			<tr> 
+			    <td>&nbsp;</td>
+		  	</tr>
+			<tr> 
+				<td>&nbsp;</td>
+			    <td align="left">
+					<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" onclick="JavaScript:return checkField()" listener="ognl:listeners.submit" label="确定" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.back" label="返回" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+			     </td>
+		  	</tr>
+		  	
+		</table>  
+	</fieldset>
+</form>
+</span>
+</span>

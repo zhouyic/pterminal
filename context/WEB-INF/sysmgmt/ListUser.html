@@ -1,0 +1,43 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+
+<table cellspacing=0 cellpadding=0 width=100% align=center>
+	<tr>
+    	<td><b class=14font>管理操作员</b></td>
+		<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+	</tr>
+</table>
+<br>
+<fieldset class=setclass align=center>
+    	 <legend class=legtab>操作员信息</legend>
+				<table border="0" cellpadding="3" cellspacing="1"  jwcid="tableView@contrib:TableView" class="tab" width="100%"
+				    source="ognl:data"
+			    	columns= "name:名称:name,email:E-mail:email,phone:电话:phone,mobile:手机:mobile,!operation1,!operation2,!operation3"
+				    pageSize="20" initialSortColumn="id" initialSortOrder="ognl:false"
+				    tableSessionStateManager="ognl:tableSessionStateManager">
+					<tr class="tbtitle">
+						<td jwcid="@contrib:TableColumns"/>
+                        <span jwcid="operation1ColumnHeader@Block">修改</span>                    
+                        <span jwcid="operation2ColumnHeader@Block">重置密码</span>                    
+                        <span jwcid="operation3ColumnHeader@Block">删除</span>                    
+					</tr>                
+					<tr jwcid="@contrib:TableRows" row="ognl:user" class="tab_tr">			
+            	        <td jwcid="@contrib:TableValues" align="center"/>
+            			<td jwcid="nameColumnValue@Block">
+            			<a jwcid="@DirectLink" listener="ognl:listeners.edit" parameters="ognl:user.name"><span jwcid="@Insert" value="ognl:user.name"/></a> 
+						</td>
+						<td jwcid="operation1ColumnValue@Block">
+				        	<a jwcid="@DirectLink" listener="ognl:listeners.edit" parameters="ognl:user.name"><img src=images/db-edit.gif border=0 alt="修改"/></a>              
+						</td>		                        
+						<td jwcid="operation2ColumnValue@Block">
+				        	<a jwcid="@DirectLink" listener="ognl:listeners.resetPwd" parameters="ognl:user.name"><img src=images/cb2.gif border=0 alt="重置密码"/></a>              
+						</td>		                        
+						<td jwcid="operation3ColumnValue@Block">
+				        	<a jwcid="@DirectLink" onclick="JavaScript:return confirm('确定删除吗?')" listener="ognl:listeners.delete" parameters="ognl:user.name"><img src=images/del.gif border=0 alt="删除"/></a>              
+						</td>		                        
+	                </tr>
+                    <tr class="tab_tr"><td align="right" colspan="8">共<span jwcid="@Insert" value="ognl:data.size"/>条 &nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+				</table>
+</fieldset>    
+</span>
+</span>

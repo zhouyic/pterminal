@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application
+      PUBLIC "-//Apache Software Foundation//Tapestry Specification 3.0//EN"
+      "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+
+<application name="terminal" engine-class="tml.common.web.WebEngine" >
+    <property name="org.apache.tapestry.visit-class" value="tml.common.web.Visit"/>
+	<property name="org.apache.tapestry.template-encoding" value="UTF-8"/>
+	<property name="org.apache.tapestry.output-encoding" value="UTF-8"/>
+	<property name="org.apache.tapestry.debug" value="true"/>
+	
+	<!-- component-type				specification-path="common/MenuTree.jwc" type="MenuTree"/ -->
+	<component-type				specification-path="common/Border.jwc" type="Border"/>
+	
+	<page name="Test"			specification-path="area/Test.page"/>
+
+    
+    <page name="Home"			specification-path="common/Home.page"/>
+    <page name="Control"		specification-path="common/Control.page"/>
+    <page name="Top"			specification-path="common/Top.page"/>
+    <page name="Menu"			specification-path="common/Menu.page"/>
+    <page name="Welcome"		specification-path="common/Welcome.page"/>       
+    <page name="PermitError"	specification-path="common/PermitError.page"/>
+    <page name="Testframe"		specification-path="common/Testframe.page"/>   
+    <page name="Error"			specification-path="common/Error.page"/>
+    <page name="SystemError"	specification-path="common/SystemError.page"/>       
+    <page name="Success"		specification-path="common/Success.page"/>    
+    <page name="Demo"			specification-path="common/Demo.page"/>
+    <page name="ShowPic"		specification-path="common/ShowPic.page"/>
+    <page name="ShowPic2"		specification-path="common/ShowPic2.page"/>
+    <page name="ShowTapestry"	specification-path="common/ShowTapestry.page"/>
+    <page name="ShowDatePicker"	specification-path="common/ShowDatePicker.page"/>       
+    
+    <page name="QueryLog"		specification-path="log/QueryLog.page"/>    
+    <page name="DeleteLog"		specification-path="log/DeleteLog.page"/>    
+      
+    <page name="QueryLoginLog"	specification-path="sysmgmt/QueryLoginLog.page"/>    
+    <page name="DeleteLoginLog"	specification-path="sysmgmt/DeleteLoginLog.page"/>    
+    <page name="AddUser"		specification-path="sysmgmt/AddUser.page"/>    
+    <page name="UpdateUser"		specification-path="sysmgmt/UpdateUser.page"/>    
+    <page name="UpdateUserPwd"	specification-path="sysmgmt/UpdateUserPwd.page"/>    
+    <page name="ResetUserPwd"	specification-path="sysmgmt/ResetUserPwd.page"/>    
+    <page name="UpdateUserRole"	specification-path="sysmgmt/UpdateUserRole.page"/>    
+    <page name="ListUser"		specification-path="sysmgmt/ListUser.page"/>
+    <page name="UpdateUserDom"	specification-path="sysmgmt/UpdateUserDom.page"/>
+    
+    <page name="AreaManage"		specification-path="area/AreaManage.page"/>
+	<page name="ConfigAddRemove"	specification-path="area/ConfigAddRemove.page"/>
+    <page name="ConfigAdd"   specification-path="area/ConfigAdd.page"/>
+    <page name="ConfigUpdate"   specification-path="area/ConfigUpdate.page"/>    
+    <page name="ConfigManage"   specification-path="area/ConfigManage.page"/>
+    <page name="ListProperty"	specification-path="configure/ListProperty.page"/>
+    <page name="EditProperty"	specification-path="configure/EditProperty.page"/>
+    
+    <page name="RegesteTerminal"	specification-path="tmlmgmt/RegesteTerminal.page"/>
+    <page name="TmlManage"	        specification-path="tmlmgmt/TmlManage.page"/>
+    <page name="TmlMonitor"	        specification-path="tmlmgmt/TmlMonitor.page"/>
+    <page name="BatchRegisterTmls"	specification-path="tmlmgmt/BatchRegisterTmls.page"/>
+    <page name="ListManage"	specification-path="tmlmgmt/ListManage.page"/>
+    <page name="UpdateServer"	specification-path="tmlmgmt/UpdateServer.page"/>
+    <page name="InsertServer"	specification-path="tmlmgmt/InsertServer.page"/>
+    <page name="DispatchSpe"	specification-path="tmlmgmt/DispatchSpe.page"/>
+    <page name="TmlSpeManage"	specification-path="tmlmgmt/TmlSpeManage.page"/>
+	<page name="UpdateTmlSpe"	specification-path="tmlmgmt/UpdateTmlSpe.page"/>
+    <page name="UpdateTmlGroup"	specification-path="tmlmgmt/UpdateTmlGroup.page"/>
+	<page name="UpgradeManage"	specification-path="tmlmgmt/UpgradeManage.page"/>
+	<page name="TmlSysInfo"	specification-path="tmlmgmt/TmlSysInfo.page"/>
+    
+    <page name="OrderForm"	specification-path="formmgmt/OrderForm.page"/>
+    
+    <page name="Hello"	        specification-path="tmlmgmt/Hello.page"/>
+      
+    <service name="chart" class="tml.common.web.ChartService"/>
+    <library id="cushion" specification-path="/com/uptech/web/tapestry/Cushion.library"/>
+    <service name="initIX8100Page" class="tml.common.InitIX8100PageService"/>
+    <library id="contrib" specification-path="/org/apache/tapestry/contrib/Contrib.library"/>
+    
+</application>

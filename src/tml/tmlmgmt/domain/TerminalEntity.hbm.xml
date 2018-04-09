@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="tml.tmlmgmt.domain.TerminalEntity" table="TML_BASE">
+		<id name="macAddr" type="string" column="macAddr">
+			<generator class="assigned"/>
+		</id>
+		<property name="groupId"          type="integer" column="groupId"/>
+		<property name="nuitId"        	  type="integer" column="nuitId"/>
+		<property name="inOperator"       type="string" column="inOperator"/>
+		<property name="inTime"           type="string" column="inTime"/>
+		<property name="status"           type="integer" column="tmlStatus"/>
+		<property name="onTime"           type="string" column="onTime"/>
+		<property name="outTime"          type="string" column="outTime"/>
+		<property name="ipAddr"           type="string" column="ipAddr"/>
+		<property name="description"      type="string" column="description"/>
+	</class>
+</hibernate-mapping>

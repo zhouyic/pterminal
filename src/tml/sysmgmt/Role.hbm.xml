@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="tml.sysmgmt.Role" table="SYS_ROLE">
+	    <id name="id" type="integer" column="ROLEID">
+			<generator class="assigned"/>
+		</id>
+			
+		<property name="name" type="string" column="NAME" />
+		<property name="value" type="string" column="VALUE" />
+		<property name="parent" type="string" column="PARENT" />
+		<property name="priority" type="integer" column="PRIORITY" />
+		       
+		<set name="users" table="SYS_USER_ROLE" inverse="true">
+			<key column="ROLEID"/>
+			<many-to-many column="USERID" class="tml.sysmgmt.User"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

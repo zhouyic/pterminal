@@ -1,0 +1,82 @@
+# This ProGuard configuration file illustrates how to process ProGuard itself.
+# Configuration files for typical applications will be very similar.
+# Usage:
+#     java -jar proguard.jar @proguard.pro
+#
+
+# Specify the input jars, output jars, and library jars.
+# We'll filter out the Ant and WTK classes, keeping everything else.
+
+-injars  terminal_tcp.jar
+-outjars lib/terminal_tcp.jar
+
+-libraryjars <java.home>/lib/rt.jar
+-libraryjars log4j-1.2.15.jar 
+-libraryjars mysql-connector-java-5.0.0-beta-bin.jar 
+-libraryjars httpcore-4.0-beta1.jar 
+-libraryjars commons-httpclient-3.0.jar 
+-libraryjars commons-codec-1.3.jar 
+-libraryjars commons-logging-1.0.2.jar 
+-libraryjars bossclient.jar 
+-libraryjars java_memcached-release_2.0.1.jar 
+-libraryjars Ice.jar
+
+# Write out an obfuscation mapping file, for de-obfuscating any stack traces
+# later on, or for incremental obfuscation of extensions.
+
+-printmapping proguard.map
+
+# Allow methods with the same signature, except for the return type,
+# to get the same obfuscation name.
+
+-overloadaggressively
+
+# Put all obfuscated classes into the nameless root package.
+
+#-repackageclasses ''
+
+# Allow classes and class members to be made public.
+
+-allowaccessmodification
+
+# The entry point: ProGuard and its main method.
+
+-keep public class communicate.TcpServlet {
+    public static void main(java.lang.String[]);
+}
+
+#-keep public class communicate.pkmgmt.dto.*
+
+-keepnames class * implements java.io.Serializable
+
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    !static !transient <fields>;
+    !private <fields>;
+    !private <methods>;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+
+# If you want to preserve the Ant task as well, you'll have to specify the
+# main ant.jar.
+
+#-libraryjars /usr/local/java/ant/lib/ant.jar
+#-adaptresourcefilecontents proguard/ant/task.properties
+#
+#-keep,allowobfuscation class proguard.ant.*
+#-keepclassmembers public class proguard.ant.* {
+#    <init>(org.apache.tools.ant.Project);
+#    public void set*(***);
+#    public void add*(***);
+#}
+
+# If you want to preserve the WTK obfuscation plug-in, you'll have to specify
+# the kenv.zip file.
+
+#-libraryjars /usr/local/java/wtk2.5.2/wtklib/kenv.zip
+#-keep public class proguard.wtk.ProGuardObfuscator

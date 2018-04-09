@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<meta http-equiv="Content-Type" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"/>
+	<title>终端管理系统</title>
+</head>
+
+<script>
+document.write('<frameset   rows="29,*" style="border:0" framespacing=0>');
+document.write('  <frame id="topmenuframe" name="topmenuframe" jwcid="@Frame" page="ognl:topPageName" SCROLLING="No"/>');
+document.write('  <frameset framespacing="0" border="0" cols="180,*"  name=mainFrame >');
+document.write('  <frame id="leftframe" name="leftframe" jwcid="@Frame" page="ognl:leftPageName" SCROLLING="auto"/>');
+//document.write('  <frame id="line" name="line" src=line.html SCROLLING="No">');
+document.write('  <frame id="mainviewFrame" name="mainviewFrame"  jwcid="@Frame" page="ognl:mainPageName" SCROLLING="auto"/>');
+document.write('  <noframes>');
+document.write('  </noframes>');
+document.write('</frameset>');
+document.write('</frameset>');
+
+function maxWin() {
+if (window.screen) {
+    var aw = screen.availWidth;
+    var ah = screen.availHeight;
+    window.moveTo(0, 0);
+    window.resizeTo(aw, ah);
+  }
+}
+maxWin()
+</script>
+</html>

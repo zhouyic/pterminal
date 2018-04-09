@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<project name="terminal_tcp" default="build">
+	<property environment="env" />
+	
+	<property name="tomcat.home" value="${env.TOMCAT_HOME}"/>	
+	<property file="build.properties" />
+	
+	<!--app用到的lib-->
+	<path id="project_classpath">
+		<fileset dir="lib" includes="*.jar" />
+		<fileset dir="lib/db" includes="*.jar" />
+		<fileset dir="lib/snmp" includes="*.jar"/>
+		<!--fileset dir="lib/thrift" includes="*.jar"/-->
+	</path>
+	
+	<target name="init">
+		<mkdir dir="build"/>
+		<mkdir dir="build/classes"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="src/communicate" destdir="build/classes" encoding="utf-8" debug="true" fork="yes" nowarn="false">
+			<classpath refid="project_classpath" />
+		</javac>
+		<copy todir="build/classes">
+			<fileset dir="src">
+				<include name="**/*.properties"/>
+				<include name="**/*.xml"/>
+				<include name="*.xml"/>
+				<include name="**/*.native"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.png"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="build" depends="compile">
+		<mkdir dir="build/tmp"/>
+		<mkdir dir="build/tmp/WEB-INF"/>
+
+		<copy file="context/WEB-INF/Tcp of web.xml" tofile="build/tmp/WEB-INF/web.xml" />
+		
+		<!-- native2ascii encoding="utf-8" src="context" dest="build/tmp" includes="js/*.js"/ -->
+		<copy todir="build/conf">
+			<fileset dir="conf">
+				<include name="log4j.properties"/>
+				<include name="tmlconfig.properties"/>
+			</fileset>			
+		</copy>
+
+		<mkdir dir="build/tmp/WEB-INF/lib"/>
+		<copy todir="build/tmp/WEB-INF/lib">
+			<fileset dir="lib" includes="log4j-1.2.15.jar"/>
+			<fileset dir="lib" includes="*.jar"/>
+			<fileset dir="lib/db" includes="*.jar"/>
+			<fileset dir="lib/snmp" includes="*.jar"/>
+			<!--fileset dir="lib/thrift" includes="*.jar"/-->
+			<fileset dir="build" includes="*.jar"/>
+		</copy>
+		
+		<path id="classpath">
+			<fileset dir="build/tmp/WEB-INF/lib" includes="*.jar" />
+		</path>
+		
+		<pathconvert property="mf.classpath" pathsep=" ">
+		 	<mapper>
+		      <chainedmapper>
+		        <flattenmapper />
+		        <globmapper from="*" to="lib/*" />
+		       </chainedmapper>
+		     </mapper>
+	     	<path refid="classpath" />
+		</pathconvert>
+
+		<jar jarfile="build/tmp/WEB-INF/lib/terminal_tcp.jar">
+			<fileset dir="build/classes">
+				<include name="**/*.class" />
+				<include name="**/*.gif" />
+				<include name="**/*.png" />
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+			</fileset>
+			<fileset dir="build/conf" includes="**" />
+			<manifest>
+				<attribute name="Main-Class" value="communicate.TcpServlet"/>
+				<attribute name="Class-Path" value="${mf.classpath} "/>
+			</manifest>
+		</jar>
+		
+		<jar jarfile="build/terminal_tcp.war">
+			<fileset dir="build/tmp">
+				<include name="**" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+</project>

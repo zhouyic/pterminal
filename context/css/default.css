@@ -1,0 +1,677 @@
+�.Insert
+{
+	padding-left:3px;
+	font-size:9pt;
+	color : #2c55b1;
+	font-weight:bold;
+}
+.Insert1
+{
+	padding-left:3px;
+	font-size:9pt;
+	color : #2c55b1;
+}
+.TextField
+{
+	padding-left:3px;
+	font-size:9pt;
+	color:#ffffff;
+	font-weight:bold;
+}
+
+.legtab{color:#324D7F}
+
+.but{background-image:url(../images/but_bg.gif);height:23;border:0;color:666666;padding-top:2px}
+
+.tableTHEAD
+{
+	border-left: 1px solid buttonhighlight;
+	border-top: 1px solid buttonhighlight;
+	border-bottom: 1px solid buttonshadow;
+	border-right: 1px solid buttonshadow;
+	font: menu;
+	color: menutext;
+	background-color: buttonface;
+    padding-top: 0px;
+    padding-bottom: 1px;
+
+}
+A
+{
+	font-size: 12px;
+	color: mediumblue;
+	text-decoration: underline;
+}
+.Bar_Button
+{
+	height:18px;
+	font-size:12px;
+	color:#FFFFFF;
+	border:#7288AC 1px solid;
+}
+.Bar_Button1
+{
+	height:18px;
+	font-size:12px;
+	color:#FFFFFF;
+}
+.Bar_Button_Over
+{
+	height:18px;
+	border: #000080 1px solid;
+	font-size: 12px;
+	background-image: url(../images/Bar_btn_bg.gif);
+	color: #000000;
+}
+.vButtonPanel
+{
+	background-color:#7496E2;
+}
+/******Event Rule*******/
+.MonitorList
+{
+	margin-left:20px;
+	font-size:12px;
+	background-color:#ffffff;
+	width:97%
+
+}
+.MonitorListParentPanel
+{	
+	margin-left:10px;
+	font-size:12px;
+	width:98%
+}
+/******Event Rule end*******/
+.ViewButtonGroup
+{
+	font-weight: bold;
+	font-size: 12px;
+	border-bottom: #000000 1px solid;
+}
+.ViewButton
+{
+	font-size: 12px;
+	color:#666666;
+}
+.ViewButton_Over
+{
+	background-color:#EFEFEB;
+	font-size: 12px;
+	color:#000000;
+	cursor:hand;
+}
+/*View中的主table的样�??/
+.tableContainer1
+{
+	border-right: #d2cdba 0px solid;
+	border-top: #d2cdba 0px solid;
+	border-left: #d2cdba 0px solid;
+	border-bottom: #d2cdba 0px solid;
+	width:97%;
+	height:98%;
+	Margin:0 10 10 10
+}
+.tableContainer2
+{
+	border-right: #d2cdba 1px solid;
+	border-top: #d2cdba 1px solid;
+	border-left: #d2cdba 1px solid;
+	border-bottom: #d2cdba 1px solid;
+}
+/*目录中的主TD的样式，例如：SettingCatalog�??/
+.defaultPanel
+{
+	background-color: #EFEFEB;
+	vertical-align:top;
+}
+/*View的标题中�??��空的DIV样式*/
+.ViewTitle
+{
+	background-color:#7AA1E6;
+	width:100%;
+	
+}
+/*�??��非超连接的Button*/
+.Button
+{
+	filter:	progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde);
+	cursor:	hand;
+	font-size: 11px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border:	1px solid #7b9ebd;
+	width:100px;
+}
+.Button_big
+{
+	filter:	progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#efefef, EndColorStr=yellow);
+	cursor:	hand;
+	font-size: 14px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border:	1px solid #7b9ebd;
+	width:150px;
+	height:30px
+}
+.Button1
+{
+	filter:	progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde);
+	cursor:	hand;
+	font-size: 11px;
+	border:	1px solid #888888;
+	
+}
+/*
+.AddButton,#addMonitorAndClose,#cmdOK,#btn_addRepot,#oRegButton
+{
+	filter:	progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FAF706, EndColorStr=#ffcf10);
+	cursor:	hand;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border:	1px solid #7b9ebd;
+	height:22px;
+	font-weight: bold;
+}
+*/
+/*View中导航条的样�??/
+.NavigatorBar
+{
+	background-color: #8E9CBB;
+	width:100%;
+	height:100%;
+}
+/*导航条中超连接的样式*/
+.NavigatorLink
+{
+	font-size: 12px;
+	color: #ffffff;
+	text-decoration: none;
+}
+/*向导提示框的样式*/
+.welcomeMsg
+{
+	border-right: #000000 1px solid;
+	border-top: #000000 1px solid;
+	padding-left: 20px;
+	font-weight: bold;
+	font-size: 13px;
+	border-left: #000000 1px solid;
+	width: 90%;
+	color: #FFFFFF;
+	border-bottom: #000000 1px solid;
+	height: 40px;
+	background-color: #8E9CBB
+}
+/*�??��下的主按�??/
+.BottomButtonTable
+{
+	background-image: url(../images/c/Back_buttom_Bar.gif);
+	width: 98%;
+	height: 43px;
+}
+/*Top菜单的样�??************************************/
+.topMainPanelStyle
+{
+	font-size: 11px;
+	color:#FFFFFF;
+	cursor: default;
+	height: 25px;
+	background-color: #7288ac;
+	BORDER-Bottom: #002d96 1px ridge; 
+}
+.divcss 
+{
+	BORDER-RIGHT: #002d96 1px ridge;
+	BORDER-LEFT: #002d96 1px ridge; 
+	FILTER: alpha(opacity=0)progid:DXImageTransform.Microsoft.DropShadow(color=#777777,offX=2,offY=3,positives=false); BORDER-LEFT: #002d96 1px ridge; BORDER-BOTTOM: #002d96 1px ridge; BACKGROUND-COLOR: #f6f6f6
+}
+.onover 
+{
+	BORDER-RIGHT: #000000 1px solid; 
+	BORDER-TOP: #000000 1px solid; 
+	BORDER-LEFT: #000000 1px solid; 
+	BORDER-BOTTOM: #000000 1px solid; 
+	BACKGROUND-COLOR: #c1d2ee
+}
+.MainItem 
+{
+	BORDER-RIGHT: #7288ac 1px solid; 
+	BORDER-TOP: #7288ac 1px solid; 
+	BORDER-LEFT: #7288ac 1px solid; 
+	BORDER-BOTTOM: #7288ac 1px solid;
+	
+}
+.MainItemOver 
+{
+	BORDER-RIGHT: #000000 1px solid; 
+	BORDER-TOP: #000000 1px solid; 
+	BACKGROUND-IMAGE: url(../ControlIamge/MenuImg/MainItemBg.gif); 
+	BORDER-LEFT: #000000 1px solid; 
+	BORDER-BOTTOM: #000000 1px solid;
+	COLOR:#000000;
+}
+/***********************主菜单的样式***************************/
+nobr 
+{ 
+	font-size: 9px; 
+	font-weight: normal; 
+	width: 100%; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+}
+.myimg 
+{ 
+	margin-left: 6px; 
+	filter: Alpha(opacity=60); 
+}
+table.area 
+{ 
+	height: 38px; 
+	table-layout: fixed; 
+	cursor: hand; 
+	border-top: 1px solid #8DA2C8; 
+	border-left: 1px solid #8DA2C8; 
+	border-right: 1px solid #273A7D; 
+	border-bottom: 1px solid #273A7D; 
+	color: #ddddee; 
+	font-size: 12px; 
+	font-weight: bold; 
+	
+}
+/*************************Catalog样式*************************************/
+.catalogFirstLevel
+{
+	font-weight: bold;
+	font-size: 12pt;
+	color: #0100A8;
+	text-decoration: none;
+}
+.catalogSecondLevel
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #2c55b1;
+	text-decoration: none;
+}
+.catalogFirstLevel_over
+{
+	font-weight: bold;
+	font-size: 12pt;
+	color: #AA0000;
+	text-decoration: none;
+}
+.catalogSecondLevel_Over
+{
+	font-weight: bold;
+	font-size: 12px;
+	color: #AA0000;
+	text-decoration: none;
+}
+.des_1
+{
+	font-size: 12px;
+	color:#444442;
+}
+.des_1_Over
+{
+	font-size: 12px;
+	color:#440000;
+}
+.HR_1_Over
+{
+	color:#440000;
+}
+.loginCaption
+{	
+	background-color: #7288ac;
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff
+}
+.loginBox
+{
+	border:solid 1px #7288ac;
+}
+.loginTitle
+{
+	font-size:12px;
+}
+.loginInput
+{
+	border:1px solid #93b2d5;
+}
+.RegisterServerInput
+{
+	border:1px solid #7288ac;
+	width:300px;
+}
+
+.RegisterServerTitle
+{	
+	font-size:12px;
+}
+
+.tabBodyBorder
+{
+	position:absolute;
+	margin:0px;
+	font-size:12px;
+	width:98%;
+	background-color:#FCFCFE;
+	border-top:1px solid #919B9C;
+	border-left:1px solid #919B9C;
+	border-right:1px solid #919B9C;
+	border-bottom:1px solid #919B9C;
+	}
+.tabBodyBorder1
+{
+	margin:0px;
+	font-size:12px;
+	width:98%;
+	background-color:#FCFCFE;
+	border-top:1px solid #919B9C;
+	border-left:1px solid #919B9C;
+	border-right:1px solid #919B9C;
+	border-bottom:1px solid #919B9C;
+	}
+/*Monitor Library style*/
+.MonitorLibrary_Title
+{	background-color:#DBEAF5;
+	color: #0100A8;
+	font-size:12px;
+	font-weight:bold;
+}
+.MonitorLibrary_Lable
+{
+	color: #0100A8;
+	font-size:12px;
+}
+.MonitorLibrary_Link
+{
+	color:#3859B8;
+	font-size:12px;
+	text-decoration:none;
+}
+
+.ReportTitle
+{
+	background-color:#eeeeee;
+	color: #0100A8;
+	font-size:12px;
+	font-weight:bold;
+}
+.ReportColumn
+{
+	color: #0100A8;
+	font-size:12px;
+}
+.ReportBody
+{
+	color: #0100A8;
+	font-size:12px;
+	width:50px;
+	text-align:center;
+	}
+/*日期控件*/
+.calendar 
+{
+behavior:url(../Behavior/calendar.htc);
+}
+/*�??��控件提示的文字信�??/
+.ControlNote
+{
+	font-size: 12px;
+	color: #0f6dc4;
+}
+.FrameSetStyle
+{
+	BORDER: transparent 2px groove;
+	FONT-SIZE: 12px; 
+	WIDTH: 98%;
+	TEXT-ALIGN: left;
+	height:275;
+}
+.scrollstyle
+{
+	SCROLLBAR-FACE-COLOR: #E9E7D8;
+	SCROLLBAR-HIGHLIGHT-COLOR: #9e9e9e;
+	SCROLLBAR-SHADOW-COLOR: #9e9e9e;
+	SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+	SCROLLBAR-ARROW-COLOR: #9e9e9e;
+	SCROLLBAR-TRACK-COLOR: #eaeaea;
+	SCROLLBAR-DARKSHADOW-COLOR: #eaeaea;
+}
+
+
+.ButtonText
+{
+	filter:progid:DXImageTransform.Microsoft.Glow(color=#ffffff,Strength=1)shadow(color=#ffffffF,direction=135,strength=2);
+}
+.ButtonText1
+{
+	filter:progid:DXImageTransform.Microsoft.Glow(color=#ffffff,Strength=1)shadow(color=#ffffffF,direction=135,strength=1);
+}
+.sbtxt
+{
+	color:#0F6DC4;
+	font-size:12px;
+	}
+.ImgForPNG24
+{
+	BEHAVIOR: url("../style/pngbehavior.htc"); 
+}
+.showTitle
+{
+	padding-right: 3px;
+	padding-left: 3px;
+	font-weight: bold;
+	font-size: 13px;
+	
+	padding-bottom: 3px;
+	padding-top: 3px;
+	color:White;
+}
+.showDesc
+{
+	color:#000000;
+	font-size:12px;
+}
+/*indexҳ�����౳��*/
+.HeaderPanelBg1
+{
+	width:100%;
+	height:100%;
+	background-image: url("../images/back/a0-1-1.png");
+	background-position:top left;
+	background-repeat:no-repeat;
+}
+/*indexҳ����Ҳ౳��?*/
+.HeaderPanelBg2
+{
+	width:100%;
+	height:100%;
+	background-image: url("images/back/a0-1-4.png"); 
+	background-position:top right;
+	background-repeat:no-repeat;
+}
+.bodyPanelBg1_1
+{
+	background-image: url("images/back/a0-2-2.png");	
+	background-position:top left;
+	background-repeat:repeat-x;
+}
+.BodyPanelBg2_1
+{
+	background-image: url("../images/back/a0-2-3.png"); 
+	background-position:top right;
+	background-repeat:repeat-x;
+}
+/*indexҳbody�ϲ�����Ҳ౳��?*/
+.BodyPanelBg2
+{
+	width:100%;
+	height:100%;
+	background-image: url("../images/back/a0-2-4.png"); 
+	background-position:top right;
+	background-repeat:no-repeat;
+	
+}
+
+
+.MainBodyBg
+{	
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/back/db-0.png',sizingMethod='scale');
+}
+
+
+
+
+
+.toolbar{background:buttonface;border-bottom:1px solid #808080;font-size:12px}
+
+
+.unc-menu {/*�˵�*/
+	position:			absolute;
+	z-index:			100;
+	visibility:			hidden;
+	width:				100px;
+	background:			buttonface;
+	border-right:1px solid #808080;
+	border-bottom:1px solid #808080;
+	border-left:1px solid #ffffff;
+	border-top:1px solid #ffffff;
+	padding:			4px;
+	filter:				progid:DXImageTransform.Microsoft.Shadow(color="#777777", Direction=135, Strength=4)
+						alpha(Opacity=100);
+	-moz-opacity:		1;
+	font-size:12px
+}
+
+.unc-menu-empty {
+	display:			block;
+	font-size:				12px;
+	color:				MenuText;
+	height:				16px;
+	padding-left:		5px;
+	padding-right:		5px;
+}
+
+.unc-menu a {
+	display:			block;
+	width:				expression(constExpression(ieBox ? "100%": "auto"));	/* should be ignored by mz and op */
+	height:				expression(constExpression("1px"));
+	overflow:			visible;	
+	padding:			2px 0px 2px 5px;
+		
+	font-size:			12px;
+	font-family:		me shell dlg;
+	text-decoration:	none;
+	vertical-align:		center;
+	color:				black;
+	border:				1px solid buttonface;
+	}	
+
+.unc-menu a:visited,
+.unc-menu a:visited:hover {
+	color:	black;
+}
+
+.unc-menu a:hover,
+.unc-menu a:visited:hover {/*�Ӳ˵�������ʾ*/
+	color:			white;
+	background:		darkblue;
+	border:1px solid white;
+}	
+
+.unc-menu a .arrow {
+	float:			right;
+	border:			0;
+	width:			3px;
+	XXXheight:			16px;
+	margin-top:		3px;
+	margin-right:	3px;
+}
+
+/* separtor */
+.unc-menu div {
+	height:			0;
+	height:			expression(constExpression(ieBox ? 2 : 0));
+	border-top:		1px solid ButtonShadow;
+	border-bottom:	1px solid ButtonHighlight;
+	overflow:		hidden;
+	margin:			0;
+	margin-top:		2px;
+	margin-bottom:	2px;
+	font-size:		0mm;
+	
+}
+
+.unc-menu-bar {
+	background:		buttonface;
+
+	padding:		2px;
+	
+	font-family:	ms shell dlg;
+	font-size:		12px;
+	
+
+	padding:		expression(constExpression(ie50 ? "0px" : "2px"));
+}
+
+.unc-menu-bar a,
+.unc-menu-bar a:visited,
+.unc-menu-bar a:visited:hover {
+	color:				ButtonText;
+	border:				1px solid ButtonFace;
+	
+	text-decoration:	none;
+	padding:			1px;
+	padding-left:		5px;
+	padding-right:		5px;
+
+	height:		expression(constExpression(ie50 ? "17px" : "auto"));
+	
+	white-space:	nowrap;
+}
+
+.unc-menu-bar a:hover {
+	color:			ButtonText;
+	background:		ButtonFace;
+	border-left:	1px solid ButtonHighlight;
+	border-right:	1px solid ButtonShadow;
+	border-top:		1px solid ButtonHighlight;
+	border-bottom:	1px solid ButtonShadow;
+}
+
+.unc-menu-bar a .arrow {
+	border:			0;
+	float:			none;
+
+}
+
+.unc-menu-bar a:active, .unc-menu-bar a:focus {
+	-moz-outline:	none;
+	outline:		none;
+
+	ie-dummy:		expression(this.hideFocus=true);
+	
+	border-left:	1px solid ButtonShadow;
+	border-right:	1px solid ButtonHighlight;
+	border-top:		1px solid ButtonShadow;
+	border-bottom:	1px solid ButtonHighlight;
+}
+.tbtitle{background-color:buttonface;font-weight:normal;}
+.tab{background-color:#000000;filter:				progid:DXImageTransform.Microsoft.Shadow(color="#777777", Direction=135, Strength=6)}
+.tab_tr{background-color:white;
+		font-size:10px}
+.14font{font-size:14px}
+.user_in{
+	border-right:1px solid #ffffff;
+	border-bottom:1px solid #ffffff;
+	border-left:1px solid #808080;
+	border-top:1px solid #808080;
+	font-family:ms shell dlg;
+
+}

@@ -1,0 +1,98 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+	<table cellpadding="0" cellspacing="0" width=100% align=center>
+		<tr>
+	    	<td><b class=14font>系统配置项</b></td>
+			<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+		</tr>
+	</table>
+	<br>
+<table border="0" cellpadding="3" cellspacing="1" width=100% height=98% align=center class=tab>
+		<tr bgcolor=white>
+	    	<td valign="top">
+	    	<form jwcid="form0@Form" direct="false">	
+					<fieldset  align=center width="80%">
+					    <legend >查询条件</legend>
+						<table border="0" cellpadding="0" cellspacing="3"  width=98% align=center>
+						    <tr>
+						    	<td align="right">配置项名称：</td>
+		    	    			<td align="left">
+			        				<input jwcid="name@TextField" value="ognl:name" size="20"/>
+			        			</td>
+							 	<td align="right">配置项类型：</td>
+				 				<td align="left" width=132>
+		    	    				<select jwcid="type@PropertySelection" style=width:100% model="ognl:typeModel" value="ognl:type" submitOnChange="false"/>
+			        			</td>
+						        
+						    </tr>
+							<tr>   
+								<td align="right">配置项描述：</td>
+		    	    			<td align="left">
+			        				<input jwcid="desc@TextField" value="ognl:desc" size="20"/>
+			        			</td>    
+						    	<td align="center" colspan="4">
+						    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.searchAction" 
+						    		label="查找" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+							    </td>
+							    <td align="center" colspan="4">
+						    		<img src=images/but_l.gif border=0 align=absmiddle><input jwcid="@Submit" listener="ognl:listeners.addAction" 
+						    		label="新增" class=but/><img src=images/but_r.gif border=0 align=absmiddle>
+							    </td>
+
+					  		</tr>	
+					  		
+						</table>
+					</fieldset>
+				</form>
+				
+				<form jwcid="form1@Form" direct="false"> 
+					<fieldset class=setclass align=center width="98%">
+				    	<legend class=legtab>查询结果</legend>
+							<table border="0" cellpadding="3" cellspacing="1" jwcid="tableView@contrib:TableView" class="tab" width="98%"
+							    source="ognl:data"
+						    	columns="name:配置项名称:Name,Desc:配置项描述:Desc,confType:配置类型:confType,
+						    	!operation:操作:operatioin"
+							    pageSize="10" initialSortColumn="name" 
+								initialSortOrder="ognl:false"
+							    tableSessionStateManager="ognl:tableSessionStateManager">
+								<tr class="tbtitle">
+									<td jwcid="@contrib:TableColumns" align="center"/>
+								</tr>                
+								<tr jwcid="@contrib:TableRows" row="ognl:dto" class="tab_tr">			
+				        	  		<td jwcid="@contrib:TableValues" align="center"/>
+				        	  		<td jwcid="confTypeColumnValue@Block">
+				        	  			<span jwcid="@Conditional" condition="ognl:dto.IIp">
+				            	  		<b class=14font>IP </b> 
+			                            </span>
+			                            <span jwcid="@Conditional" condition="ognl:dto.PPort">
+				            	  		<b class=14font>IP和port </b> 
+			                            </span>
+			                            <span jwcid="@Conditional" condition="ognl:dto.UUrl">
+				            	  		<b class=14font>URL </b> 
+			                            </span>
+
+					            	</td>
+				            		<td jwcid="operationColumnValue@Block">
+				            	  		<a jwcid="@DirectLink" listener="ognl:listeners.editAction" parameters="ognl:dto">
+			                                  <img src=images/db-edit.gif border=0 />
+			                            </a>&nbsp;&nbsp;
+				            	  		<a jwcid="@DirectLink" listener="ognl:listeners.delAction" parameters="ognl:dto" onclick="JavaScript:return confirm('确定删除?')">
+			                                  <img src=images/del.gif border=0 />
+			                            </a>
+					            	</td>		                             	        
+				        		</tr>
+				     			<tr class="tab_tr"><td align="right" colspan="20">共<span jwcid="@Insert" value="ognl:data.size"/>条&nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+							</table> 
+					</fieldset>
+				</form>
+			</td>
+		</tr>
+	</table>
+				
+
+
+
+
+<!---html end--> 
+</span>
+ </span>

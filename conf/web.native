@@ -1,0 +1,65 @@
+common.0 = 操作成功
+common.1 = 参数错误
+common.2 = 增加失败
+common.3 = 修改失败
+common.4 = 删除错误
+common.5 = 数据库操作异常
+common.6 = 操作错误
+
+
+
+dsp.tml.log.web.1 = 时间不能为空
+dsp.tml.log.web.0 = 成功删除了日志
+
+dsp.tml.sysmgmt.web.DeleteLoginLog.1 = 时间不能为空
+dsp.tml.sysmgmt.web.DeleteLoginLog.0 = 成功删除了登陆日志
+
+dsp.tml.sysmgmt.web.QueryLoginLog.1=登陆
+dsp.tml.sysmgmt.web.QueryLoginLog.2=退出
+
+dsp.tml.sysmgmt.web.AddUser.0=成功增加了操作员
+dsp.tml.sysmgmt.web.AddUser.1=参数错误
+dsp.tml.sysmgmt.web.AddUser.2=增加用户失败
+dsp.tml.sysmgmt.web.AddUser.21=用户名已经被注册了
+dsp.tml.sysmgmt.web.AddUser.5=数据库操作异常
+dsp.tml.sysmgmt.web.AddUser.70=用户名不能为空!
+dsp.tml.sysmgmt.web.AddUser.71=恭喜您,该用户名可以注册!
+dsp.tml.sysmgmt.web.AddUser.72=对不起,该用户名已经注册了!
+
+dsp.tml.sysmgmt.web.ListUser.0=成功删除了操作员
+dsp.tml.sysmgmt.web.ListUser.1=参数错误
+dsp.tml.sysmgmt.web.ListUser.4=删除操作员失败
+dsp.tml.sysmgmt.web.ListUser.41=用户不存在
+dsp.tml.sysmgmt.web.ListUser.5=数据库操作异常
+
+dsp.tml.sysmgmt.web.UpdateUser.0=成功修改了操作员
+dsp.tml.sysmgmt.web.UpdateUser.1=参数错误
+dsp.tml.sysmgmt.web.UpdateUser.3=修改操作员失败
+dsp.tml.sysmgmt.web.UpdateUser.31=用户不存在
+dsp.tml.sysmgmt.web.UpdateUser.5=数据库操作异常
+
+dsp.tml.sysmgmt.web.UpdateUserDom.0=成功修改了操作员级别
+dsp.tml.sysmgmt.web.UpdateUserDom.1=参数错误
+dsp.tml.sysmgmt.web.UpdateUserDom.3=修改操作员级别失败
+dsp.tml.sysmgmt.web.UpdateUserDom.31=用户不存在
+dsp.tml.sysmgmt.web.UpdateUserDom.5=数据库操作异常
+
+dsp.tml.sysmgmt.web.UpdateUserRole.0=成功修改了操作员权限
+dsp.tml.sysmgmt.web.UpdateUserRole.1=参数错误
+dsp.tml.sysmgmt.web.UpdateUserRole.3=修改操作员权限失败
+dsp.tml.sysmgmt.web.UpdateUserRole.31=用户不存在
+dsp.tml.sysmgmt.web.UpdateUserRole.5=数据库操作异常
+
+dsp.tml.sysmgmt.web.UpdateUserPwd.0=成功修改了密码
+dsp.tml.sysmgmt.web.UpdateUserPwd.1=旧密码不正确
+dsp.tml.sysmgmt.web.UpdateUserPwd.3=修改密码失败
+dsp.tml.sysmgmt.web.UpdateUserPwd.31=用户不存在
+dsp.tml.sysmgmt.web.UpdateUserPwd.5=数据库操作异常
+
+dsp.tml.sysmgmt.web.ResetUserPwd.0=成功重置了密码
+dsp.tml.sysmgmt.web.ResetUserPwd.3=重置密码失败
+dsp.tml.sysmgmt.web.ResetUserPwd.31=用户不存在
+dsp.tml.sysmgmt.web.ResetUserPwd.5=数据库操作异常
+
+
+

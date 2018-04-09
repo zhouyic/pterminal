@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta http-equiv="Content-Type" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"/>
+<script>
+var Xpos = 1;
+var Ypos = 1;
+function doDown() {
+Xpos = document.body.scrollLeft+event.x;
+Ypos = document.body.scrollTop+event.y;
+}
+
+function showmenu(){
+menutool.style.left=Xpos;
+menutool.style.top=Ypos;
+menutool.style.display="block"
+}
+function hidemenu(){
+menutool.style.display="none"
+}
+
+document.onclick = hidemenu;
+document.onmousedown = doDown;
+//oncontextmenu=self.event.returnValue=false;showmenu() ondragstart=self.event.returnValue=false onselectstart=self.event.returnValue=false
+</script>
+
+<link type="text/css" rel="stylesheet" href="css/treestyle.css">
+</head>
+<body jwcid="@Body" style="margin:0"  style="overflow-x:auto;overflow-y:auto" bgcolor="#6787C2">
+<span jwcid="@cushion:MenuTree" menuItems="ognl:menuItems" target='ognl:"parent.mainviewFrame"' imagePath='ognl:"images"'/>
+<DIV id=menutool style="DISPLAY: none">
+<TABLE cellPadding=0 cellSpacing=0 class=menus>
+  <TBODY>
+  <TR>
+    <TD height=20 onclick=tree.expandAll();hidemenu() 
+    onmouseout="this.style.backgroundColor='';this.style.color='';" 
+    onmouseover="this.style.backgroundColor='darkblue';this.style.color='white';" 
+    width=80><NOBR><img src=images/openfoldericon.png align=absmiddle> ȫ��չ��</NOBR></TD></TR>
+  <TR>
+    <TD height=20 onclick=tree.toggle();hidemenu() 
+    onmouseout="this.style.backgroundColor='';this.style.color='';" 
+    onmouseover="this.style.backgroundColor='darkblue';this.style.color='white';"><NOBR><img src=images/foldericon.png align=absmiddle> ȫ������</NOBR></TD></TR>
+  <TR>
+    <TD height=20 onclick=self.location.reload();hidemenu() 
+    onmouseout="this.style.backgroundColor='';this.style.color='';" 
+    onmouseover="this.style.backgroundColor='darkblue';this.style.color='white';"><NOBR><img src=images/files.gif align=absmiddle> ˢ��</NOBR></TD></TR>
+  </TBODY>
+</TABLE>
+</DIV>        
+</body>
+</html>

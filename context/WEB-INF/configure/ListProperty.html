@@ -1,0 +1,56 @@
+<span jwcid="$content$">
+<span jwcid="@Border">
+	
+<table cellspacing=0 cellpadding=0 width=100% align=center>
+	<tr>
+    	<td><b class=14font>系统参数配置</b></td>
+		<td width=200 align=right style="padding-right:4px">&nbsp;</td>
+	</tr>
+</table>
+
+<br>
+<fieldset class=setclass align=center width="98%">
+    	 <legend class=legtab>系统参数信息</legend>
+				<table border="0" cellpadding="3" cellspacing="1"  
+
+jwcid="tableView@contrib:TableView" class="tab" width="98%"
+				    source="ognl:data"
+			    	columns= "name:系统参数名称:name,value:系统参数
+
+值:value,desc:参数描述:desc,!operation"
+				    pageSize="25" initialSortColumn="id" 
+
+initialSortOrder="ognl:false"
+				    
+
+tableSessionStateManager="ognl:tableSessionStateManager">
+					<tr class="tbtitle">
+						<td jwcid="@contrib:TableColumns"/>
+                        <span jwcid="operationColumnHeader@Block">修改</span>                
+
+    
+					</tr>                
+					<tr jwcid="@contrib:TableRows" row="ognl:property" 
+
+class="tab_tr">			
+            <td jwcid="@contrib:TableValues" align="center"/>
+            <td jwcid="nameColumnValue@Block">
+            			<a jwcid="@DirectLink" listener="ognl:listeners.edit" 
+
+parameters="ognl:property"><span jwcid="@Insert" value="ognl:property.name"/></a> 
+						</td> 
+						<td jwcid="operationColumnValue@Block">
+				        	<a jwcid="@DirectLink" 
+
+listener="ognl:listeners.edit" parameters="ognl:property"><img src=images/db-edit.gif 
+
+border=0 alt="修改"/></a>              
+						</td>		                        
+	                </tr>
+                    <tr class="tab_tr"><td align="right" colspan="8">共<span jwcid="@Insert" 
+
+value="ognl:data.size"/>条 &nbsp;<span jwcid="@contrib:TablePages"/></td></tr>
+				</table>
+</fieldset>    
+</span>
+</span>

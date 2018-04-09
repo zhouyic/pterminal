@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="tml.sysmgmt.User" table="SYS_USER">
+		<id name="id" type="integer" column="USERID">			
+			<generator class="hilo">
+				<param name="table">SYS_USERID_GEN</param>
+				<param name="column">NNEXT</param>
+				<param name="max_lo">10</param>
+			</generator>
+		</id>
+		
+		<property name="type" type="integer" column="TYPE" />	
+		<property name="name" type="string" column="NAME" />
+		<property name="pwd" type="string" column="PWD" />
+		<property name="email" type="string" column="EMAIL" />
+		<property name="phone" type="string" column="PHONE" />
+		<property name="mobile" type="string" column="MOBILE" />
+		
+		<set name="roles" table="SYS_USER_ROLE">
+			<key column="USERID"/>
+			<many-to-many column="ROLEID" class="tml.sysmgmt.Role" />
+		</set>
+	
+		<set name="dom" table="SYS_USER_DOM" inverse="false">
+			<key column="USERID"/>
+			<many-to-many column="DOMID" class="tml.sysmgmt.Dom" />
+		</set>
+
+	</class>
+</hibernate-mapping>

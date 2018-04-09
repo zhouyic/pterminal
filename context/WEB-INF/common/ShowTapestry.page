@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-specification PUBLIC
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN"
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<page-specification	class="tml.common.web.EnquiryPage">
+    <property-specification name="contactRep" type="boolean" persistent="yes"/>
+    <property-specification name="staff" type="boolean"/>
+    <property-specification name="username" type="java.lang.String"/>
+    <property-specification name="password" type="java.lang.String"/>
+    <property-specification name="startDate" type="java.util.Date"/>
+    <property-specification name="endDate" type="java.util.Date"/>
+    <property-specification name="fullName"
+        type="java.lang.String"
+        persistent="yes"/>
+    <property-specification name="manager" type="boolean" persistent="yes"/>
+    <property-specification name="staffList"
+        type="java.util.List"
+        persistent="yes"/>
+    <property-specification name="customerList"
+        type="java.util.List"
+        persistent="yes"/>
+    <property-specification name="customer" type="tml.common.web.Customer"/>
+    <property-specification name="dueDate" type="java.util.Date"/>
+    <property-specification name="dueClass" type="java.lang.String"/>
+    <property-specification name="gender" type="java.lang.String"/>
+    <property-specification name="orderSize"
+        type="java.lang.String"
+        initial-value="@dsp.boss.nms.web.EnquiryPage@MEDIUM"/>
+    
+    
+    <!--component id="form" type="Form">
+        <binding name="listener" expression="listeners.okSubmit"/>
+        <binding name="delegate" expression="beans.delegate"/>
+    </component>
+    <bean name="delegate" class="org.Apache.Tapestry.valid.ValidationDelegate"/>
+    <property-specification name="lotBid"
+        type="dsp.boss.nms.web.LotBid"
+        initial-value="new dsp.boss.nms.web.LotBid()"/>
+    <bean name="fullNameValidator"
+        class="org.apache.tapestry.valid.StringValidator">
+        <set-property name="required" expression="true"/>
+        <set-property name="minimumLength" expression="3"/>
+    </bean>
+    <component id="fullNameField" type="ValidField">
+        <binding name="value" expression="lotBid.bidderName"/>
+        <binding name="validator" expression="beans.fullNameValidator"/>
+        <static-binding name="displayName" value="Full Name"/>
+    </component>
+    <component id="ShowError" type="Delegator">
+        <binding name="delegate" expression="beans.delegate.firstError"/>
+    </component-->
+</page-specification>

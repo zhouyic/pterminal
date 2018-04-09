@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<project name="terminal" default="deploy">
+	<property environment="env" />
+	
+	<property name="tomcat.home" value="${env.TOMCAT_HOME}"/>	
+	<property file="build.properties" />
+	<property file="conf/${db.name}.properties" />
+	<property name="db.driver" value="${db.driver}"/>
+	<property name="db.url" value="${db.url}"/>
+	<property name="db.userid" value="${db.userid}"/>
+	<property name="db.password" value="${db.password}"/>
+	
+	<!--app用到的lib-->
+	<path id="project_classpath">
+		<fileset dir="lib" includes="*.jar" />
+		<fileset dir="lib/page" includes="*.jar" />
+		<fileset dir="lib/db" includes="*.jar" />
+		<fileset dir="lib/snmp" includes="*.jar"/>
+	</path>
+
+	<target name="init">
+		<mkdir dir="build"/>
+		<mkdir dir="build/classes"/>
+	</target>
+
+	<target name="dbinit">
+		<echo message="db information" />
+		<echo message="${db.tml.driver}" />
+		<echo message="${db.tml.url}" />
+		<echo message="${db.tml.userid}" />
+		<echo message="${db.tml.password}" />
+
+		<sql driver="${db.driver}" classpathref="project_classpath" url="${db.tml.url}" userid="${db.userid}" password="${db.password}" onerror="continue" encoding="utf-8">
+			<fileset dir="db/${db.name}">
+				<include name="delete*.sql" />
+			</fileset>
+		</sql>
+		<sql driver="${db.driver}" classpathref="project_classpath" url="${db.tml.url}" userid="${db.userid}" password="${db.password}" onerror="continue" encoding="utf-8">
+			<fileset dir="db/${db.name}">
+				<include name="create*.sql" />
+			</fileset>
+		</sql>
+		<sql driver="${db.driver}" classpathref="project_classpath" url="${db.tml.url}" userid="${db.userid}" password="${db.password}" onerror="continue" encoding="utf-8">
+			<fileset dir="db/${db.name}">
+				<include name="insert*.sql" />
+			</fileset>
+		</sql>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="build/classes" encoding="utf-8" debug="false" fork="yes" nowarn="true">
+			<classpath refid="project_classpath" />
+		</javac>
+		<copy todir="build/classes">
+			<fileset dir="src">
+				<include name="**/*.properties"/>
+				<include name="**/*.native"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.png"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="build" depends="compile">
+		<mkdir dir="build/tmp"/>
+		<mkdir dir="build/tmp/WEB-INF"/>
+
+		<copy todir="build/tmp">
+			<fileset dir="context">
+				<include name="*.html" /> 
+				<include name="*.htm" /> 
+				<include name="WEB-INF/**" />
+				<include name="images/**" /> 
+				<include name="css/**" /> 
+				<include name="js/**" />
+			</fileset>
+		</copy>
+		
+		<copy file="context/WEB-INF/Page of web.xml" tofile="build/tmp/WEB-INF/web.xml" overwrite="true"/>
+		
+		<!-- native2ascii encoding="utf-8" src="context" dest="build/tmp" includes="js/*.js"/ -->
+		<copy todir="build/conf">
+			<fileset dir="conf">
+				<include name="log4j.properties"/>
+				<include name="tmlconfig.properties"/>
+				<include name="hibernate.cfg.xml"/>
+			</fileset>			
+		</copy>
+		
+		<native2ascii encoding="utf-8" src="conf" dest="build/conf" includes="web.native" ext=".properties"/>
+
+		<mkdir dir="build/tmp/WEB-INF/lib"/>			
+		<copy todir="build/tmp/WEB-INF/lib">
+		<fileset dir="lib" includes="log4j-1.2.15.jar"/>
+			<fileset dir="lib" includes="*.jar"/>
+			<fileset dir="lib/page" includes="*.jar"/>
+			<fileset dir="lib/db" includes="*.jar"/>
+			<fileset dir="lib/snmp" includes="*.jar"/>
+			<fileset dir="build" includes="*.jar"/>
+		</copy>
+		
+		<jar jarfile="build/tmp/WEB-INF/lib/terminal.jar">
+			<fileset dir="build/classes">
+				<include name="**/*.class" />
+				<include name="**/*.gif" />
+				<include name="**/*.png" />
+				<include name="**/*.properties" />
+			</fileset>
+			<fileset dir="build/conf" includes="**" />
+			<fileset dir="src" includes="**/*.hbm.xml" />
+		</jar>
+
+		<jar jarfile="build/terminal.war">
+			<fileset dir="build/tmp">
+				<include name="**" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="deploy" depends="build">
+		<copy todir="${tomcat.home}/webapps" overwrite="true">
+			<fileset dir="build">
+				<include name="terminal.war"/>
+			</fileset>			
+		</copy>
+	</target>
+	
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+</project>

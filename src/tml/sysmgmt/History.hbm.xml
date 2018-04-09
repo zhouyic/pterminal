@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="tml.sysmgmt.History" table="SYS_HISTORY">
+		<id name="id" type="integer" column="HISTORYID">
+			<generator class="hilo">
+				<param name="table">SYS_USERID_GEN</param>
+				<param name="column">NEXT_HISTID</param>
+				<param name="max_lo">5</param>
+			</generator>
+		</id>
+	
+		<property name="time" type="timestamp" column="HISTIME" />
+		<property name="userId" type="integer" column="USERID" />
+		<property name="userName" type="string" column="USERNAME" />
+		<property name="logType" type="integer" column="LOGTYPE" />
+		<property name="clientIp" type="string" column="CLIENTIP" />			
+	</class>
+</hibernate-mapping>
